@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>UploadFiles | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="# 1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整">
+  <meta name="description" content="1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整体">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="UploadFiles">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/uploadfile/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="# 1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整">
+<meta property="og:description" content="1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整体">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://i.imgur.com/VIqFkG1.png">
 <meta property="og:image" content="http://i.imgur.com/GLiOY6y.png">
@@ -32,10 +32,10 @@
 <meta property="og:image" content="http://i.imgur.com/UqKVbD7.png">
 <meta property="og:image" content="http://i.imgur.com/6Nk8Qd3.png">
 <meta property="og:image" content="http://i.imgur.com/hh5Y4He.png">
-<meta property="og:updated_time" content="2017-06-21T11:50:04.677Z">
+<meta property="og:updated_time" content="2017-11-01T03:23:48.116Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="# 1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整">
+<meta name="twitter:title" content="UploadFiles">
+<meta name="twitter:description" content="1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整体">
 <meta name="twitter:image" content="http://i.imgur.com/VIqFkG1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -64,42 +64,42 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="" class="profilepic">
-			<img src="/1.png" class="js-avatar show" />
+		<a href="/" class="profilepic">
+			<img src="/img/timg.jpg" class="js-avatar show" />
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="">Da7ura_n0ir</a></h1>
+		  <h1 class="header-author"><a href="/">Da7ura_n0ir</a></h1>
 		</hgroup>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/">For study</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/me">For me</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">all essay</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">myfriends</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">aboutme</a>
     			
             
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/Da7uraN0ir/Da7uraN0ir.github.io" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -109,7 +109,7 @@
 		        
 			</div>
 		</nav>
-	</header>		
+	</header>
 </div>
 
     </div>
@@ -123,7 +123,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/timg.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Da7ura_n0ir</h1>
@@ -140,7 +140,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/Da7uraN0ir/Da7uraN0ir.github.io" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -155,9 +155,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">For study</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/me">For me</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,9 +175,25 @@
             <article id="post-uploadfile" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      UploadFiles
+    </h1>
+  
+
+        
+        <a href="/2017/10/31/uploadfile/" class="archive-article-date">
+  	<time datetime="2017-10-31T13:06:42.920Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p><!--markdown--># 1.什么是文件上传漏洞<br>文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。<br>这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。<br>本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整体渗透思路介绍。</p>
+        <!--markdown-->
+<h1 id="1-什么是文件上传漏洞"><a href="#1-什么是文件上传漏洞" class="headerlink" title="1.什么是文件上传漏洞"></a>1.什么是文件上传漏洞</h1><p>文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。<br>这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。<br>本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整体渗透思路介绍。</p>
 <h1 id="2-文件上传的危害"><a href="#2-文件上传的危害" class="headerlink" title="2.文件上传的危害"></a>2.文件上传的危害</h1><h2 id="2-1-上传的文件时web脚本语言"><a href="#2-1-上传的文件时web脚本语言" class="headerlink" title="2.1 上传的文件时web脚本语言"></a>2.1 上传的文件时web脚本语言</h2><p>服务器的web容器就会解释并执行用户上传的脚本，导致代码的执行。</p>
 <h2 id="2-2-上传的是-flash的策略文件crossdomain-xml"><a href="#2-2-上传的是-flash的策略文件crossdomain-xml" class="headerlink" title="2.2 上传的是 flash的策略文件crossdomain.xml"></a>2.2 上传的是 flash的策略文件crossdomain.xml</h2><p>黑客用以控制flash在还域下的行为（其他通过类似方式控制策略文件的情况类似）。<br>也就是说，我在你这里改掉你的安全策略，就相当于把你的防盗门换成了推拉门，安全性能自然下降，或者将别人访问你的web重定向到攻击者的钓鱼网站，则危害也是很大的。   </p>
 <h2 id="2-3上传文件是病毒、木马文件"><a href="#2-3上传文件是病毒、木马文件" class="headerlink" title="2.3上传文件是病毒、木马文件"></a>2.3上传文件是病毒、木马文件</h2><p>黑客用以诱骗用户或者管理员下载执行。</p>
@@ -209,7 +225,7 @@
 <h2 id="7-3-POST-GET-cookie"><a href="#7-3-POST-GET-cookie" class="headerlink" title="7.3 POST/GET/cookie"></a>7.3 POST/GET/cookie</h2><p>这要看waf检测哪种传参方式，如果没有对所有传参方式进行过滤，那就给了攻击者攻击的方式。  </p>
 <h2 id="7-4-前文方式"><a href="#7-4-前文方式" class="headerlink" title="7.4 前文方式"></a>7.4 前文方式</h2><p>同样前文提到的解析漏洞，文件包含等漏洞都可以用过来。</p>
 <h1 id="8-文件上传引起的xss攻击"><a href="#8-文件上传引起的xss攻击" class="headerlink" title="8.文件上传引起的xss攻击"></a>8.文件上传引起的xss攻击</h1><h2 id="8-1-触发点"><a href="#8-1-触发点" class="headerlink" title="8.1 触发点"></a>8.1 触发点</h2><p>一个文件上传点是执行XSS应用程序的绝佳机会。很多网站都有用户权限上传个人资料图片的上传点，只要你能找到一个回显位置，你就有很多机会找到相关漏洞。  </p>
-<h2 id="8-2-漏洞成因"><a href="#8-2-漏洞成因" class="headerlink" title="8.2 漏洞成因"></a>8.2 漏洞成因</h2><p>显式输出文件名，上传安全策略文件，上传了可执行的javascript文件 </p>
+<h2 id="8-2-漏洞成因"><a href="#8-2-漏洞成因" class="headerlink" title="8.2 漏洞成因"></a>8.2 漏洞成因</h2><p>显式输出文件名，上传安全策略文件，上传了可执行的javascript文件</p>
 <h2 id="8-3-案例分析"><a href="#8-3-案例分析" class="headerlink" title="8.3 案例分析"></a>8.3 案例分析</h2><p>1.显式输出文件名<br>文件名本身可能会显式反映在页面上，所以一个带有XSS明明的文件就足以进行XSS攻击<br><img src="http://i.imgur.com/OZRNmOF.png" alt=""><br><img src="http://i.imgur.com/4pduwoq.png" alt=""><br><img src="http://i.imgur.com/HjK45Cb.png" alt=""><br><img src="http://i.imgur.com/8RwcWHr.png" alt=""><br><img src="http://i.imgur.com/TWciEcz.png" alt=""><br>像这种将上传的文件名显示在页面中的，我们就可以构造文件名使浏览器执行攻击者设定好的脚本命令。<br>2.文件元数据<br>漏洞点还是要有能地方能显示图片详情<br><img src="http://i.imgur.com/PgmK6Wl.png" alt=""><br>这样修改某个元数据，再加上网站能找到这个数据的输出点，攻击着就可以实现脚本的插入，造成XSS攻击。<br>3.VG格式的文件的Content<br>如果应用允许上传SVG格式的文件（其实就是一个图像类型的），那么带有以下content的文件可以被用来触发XSS：</p>
 <pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; onload=&quot;alert(document.domain)&quot;/&gt;  
 </code></pre><p><img src="http://i.imgur.com/RfddLsZ.png" alt=""><br><img src="http://i.imgur.com/z1WelOw.png" alt=""><br>这段代码只要存在于服务器中，用户访问就能造成XSS攻击，所以只要用户能上传一段这样内容的文件到服务器，在诱导其他用户或者管理点击就会获取他们的私密信息。<br>4.源码引用，执行javascript脚本<br>就像前文提到的，只要能引用，就能做我们想做的事儿，我们可以很容易的创建一张包含 javascript payload 的 GIF 图片，然后将这张图片当做源码加以引用。<br>如果我们可以成功的注入相同的域名，如下所示，则这样可以有效的帮我们绕过 CSP（内容安全策略）防护（其不允许执行例如</p>
@@ -230,7 +246,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thinks<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
@@ -314,14 +330,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          How To Use Vi Editor
         
       </div>
     </a>
   
   
     <a href="/2017/10/31/ssrf/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">SSRF</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,15 +434,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">all essay</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">myfriends</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">aboutme</a></li>
       
         
     </ul>
@@ -495,27 +511,39 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://times0ng.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Time_S0ng</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://ph0rse.me/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>ph0rse</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="http://kr0net.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>kr0net</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
+              <a href="http://c1em0.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>c1em0</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
+              <a href="http://www.d0g3.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>My team</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="http://lucifaer.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>哈士奇</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://balis0ng.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>balis0ng</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://03i0.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Snoopy</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://over-rainbow.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>学霸</a>
             </li>
           
         </ul>
@@ -526,7 +554,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Don&#39;t learn to hack,hacking to learn..</div>
   	  	
     	</section>
     

@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>SSRF | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="## 1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定">
+  <meta name="description" content="1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定不容">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="SSRF">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/ssrf/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="## 1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定">
+<meta property="og:description" content="1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定不容">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://i.imgur.com/7RbvaLr.png">
 <meta property="og:image" content="http://i.imgur.com/FNJz4nm.png">
@@ -21,10 +21,10 @@
 <meta property="og:image" content="http://i.imgur.com/EjblyQu.png">
 <meta property="og:image" content="http://i.imgur.com/n2Qnp7K.png">
 <meta property="og:image" content="http://i.imgur.com/neAIumk.png">
-<meta property="og:updated_time" content="2017-06-21T11:17:56.163Z">
+<meta property="og:updated_time" content="2017-11-01T03:23:47.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="## 1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定">
+<meta name="twitter:title" content="SSRF">
+<meta name="twitter:description" content="1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定不容">
 <meta name="twitter:image" content="http://i.imgur.com/7RbvaLr.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -53,42 +53,42 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="" class="profilepic">
-			<img src="/1.png" class="js-avatar show" />
+		<a href="/" class="profilepic">
+			<img src="/img/timg.jpg" class="js-avatar show" />
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="">Da7ura_n0ir</a></h1>
+		  <h1 class="header-author"><a href="/">Da7ura_n0ir</a></h1>
 		</hgroup>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/">For study</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/me">For me</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">all essay</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">myfriends</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">aboutme</a>
     			
             
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/Da7uraN0ir/Da7uraN0ir.github.io" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -98,7 +98,7 @@
 		        
 			</div>
 		</nav>
-	</header>		
+	</header>
 </div>
 
     </div>
@@ -112,7 +112,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/timg.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Da7ura_n0ir</h1>
@@ -129,7 +129,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/Da7uraN0ir/Da7uraN0ir.github.io" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -144,9 +144,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">For study</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/me">For me</a></li>
 		        
 				</ul>
 			</nav>
@@ -164,9 +164,25 @@
             <article id="post-ssrf" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSRF
+    </h1>
+  
+
+        
+        <a href="/2017/10/31/ssrf/" class="archive-article-date">
+  	<time datetime="2017-10-31T13:06:42.912Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p><!--markdown-->## 1.什么是SSRF？<br>服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。<br>打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定不容易要到，但通过你这里去要，就变得轻而易举了。  </p>
+        <!--markdown-->
+<h2 id="1-什么是SSRF？"><a href="#1-什么是SSRF？" class="headerlink" title="1.什么是SSRF？"></a>1.什么是SSRF？</h2><p>服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。<br>打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定不容易要到，但通过你这里去要，就变得轻而易举了。  </p>
 <h2 id="2-SSRF如何实现？"><a href="#2-SSRF如何实现？" class="headerlink" title="2.SSRF如何实现？"></a>2.SSRF如何实现？</h2><p>很多web应用都提供了从其他的服务器上获取数据的功能。使用用户指定的URL，web应用可以获取图片，下载文件，读取文件内容等。这个功能如果被恶意使用，可以利用存在缺陷的web应用作为代理攻击远程和本地的服务器。比如百度识图这种可以引入其他服务器的资源的web应用，如果自身不做好过滤和防护，那么极有可能作为跳板被用于攻击远程和本地的服务器</p>
 <h2 id="3-从ssrf触发点看如何挖掘ssrf漏洞"><a href="#3-从ssrf触发点看如何挖掘ssrf漏洞" class="headerlink" title="3.从ssrf触发点看如何挖掘ssrf漏洞"></a>3.从ssrf触发点看如何挖掘ssrf漏洞</h2><h3 id="3-1-ssrf触发点"><a href="#3-1-ssrf触发点" class="headerlink" title="3.1 ssrf触发点"></a>3.1 ssrf触发点</h3><p>这个漏洞的触发点在一个能传入其他服务器资源让web服务器进行资源申请（去访问传入的url地址并请求文件）。  </p>
 <h3 id="3-2-漏洞常见出没位置"><a href="#3-2-漏洞常见出没位置" class="headerlink" title="3.2 漏洞常见出没位置"></a>3.2 漏洞常见出没位置</h3><p>分享位置，可以通过URL地址分享网页内容<br>转码服务<br>在线翻译<br>图片加载与下载：通过URL地址加载或下载<br>图片，文章收藏功能<br>未公布的api（接口或者叫插件）实现以及其他调用URL的功能<br>从URL关键字中寻找。如：<br>share/wap/url/link/src/source/target/u/3g/display/sourceURL/imageURL/domain等  </p>
@@ -187,7 +203,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thinks<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
@@ -271,14 +287,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          UploadFiles
         
       </div>
     </a>
   
   
     <a href="/2017/10/31/sql/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">SQLi</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -375,15 +391,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">all essay</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">myfriends</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">aboutme</a></li>
       
         
     </ul>
@@ -452,27 +468,39 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://times0ng.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Time_S0ng</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://ph0rse.me/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>ph0rse</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="http://kr0net.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>kr0net</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
+              <a href="http://c1em0.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>c1em0</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
+              <a href="http://www.d0g3.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>My team</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="http://lucifaer.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>哈士奇</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://balis0ng.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>balis0ng</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://03i0.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Snoopy</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://over-rainbow.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>学霸</a>
             </li>
           
         </ul>
@@ -483,7 +511,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Don&#39;t learn to hack,hacking to learn..</div>
   	  	
     	</section>
     
