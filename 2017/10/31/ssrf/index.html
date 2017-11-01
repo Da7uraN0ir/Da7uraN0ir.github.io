@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="## 1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/10/30/hello-world/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/10/31/ssrf/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="## 1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-29T16:51:01.060Z">
+<meta property="og:image" content="http://i.imgur.com/7RbvaLr.png">
+<meta property="og:image" content="http://i.imgur.com/FNJz4nm.png">
+<meta property="og:image" content="http://i.imgur.com/yIqXYkd.png">
+<meta property="og:image" content="http://i.imgur.com/EjblyQu.png">
+<meta property="og:image" content="http://i.imgur.com/n2Qnp7K.png">
+<meta property="og:image" content="http://i.imgur.com/neAIumk.png">
+<meta property="og:updated_time" content="2017-06-21T11:17:56.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="## 1.什么是SSRF？服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定">
+<meta name="twitter:image" content="http://i.imgur.com/7RbvaLr.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,35 +161,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ssrf" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Hello World
-    </h1>
-  
-
-        
-        <a href="/2017/10/30/hello-world/" class="archive-article-date">
-  	<time datetime="2017-10-29T16:51:01.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-30</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p><!--markdown-->## 1.什么是SSRF？<br>服务端请求伪造攻击（Server-side Request Forgery）。是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）。<br>打个比方，就是攻击者问你（web服务器）你朋友（内网）的手机号（一般外网无权访问的文件），他自己去问肯定不容易要到，但通过你这里去要，就变得轻而易举了。  </p>
+<h2 id="2-SSRF如何实现？"><a href="#2-SSRF如何实现？" class="headerlink" title="2.SSRF如何实现？"></a>2.SSRF如何实现？</h2><p>很多web应用都提供了从其他的服务器上获取数据的功能。使用用户指定的URL，web应用可以获取图片，下载文件，读取文件内容等。这个功能如果被恶意使用，可以利用存在缺陷的web应用作为代理攻击远程和本地的服务器。比如百度识图这种可以引入其他服务器的资源的web应用，如果自身不做好过滤和防护，那么极有可能作为跳板被用于攻击远程和本地的服务器</p>
+<h2 id="3-从ssrf触发点看如何挖掘ssrf漏洞"><a href="#3-从ssrf触发点看如何挖掘ssrf漏洞" class="headerlink" title="3.从ssrf触发点看如何挖掘ssrf漏洞"></a>3.从ssrf触发点看如何挖掘ssrf漏洞</h2><h3 id="3-1-ssrf触发点"><a href="#3-1-ssrf触发点" class="headerlink" title="3.1 ssrf触发点"></a>3.1 ssrf触发点</h3><p>这个漏洞的触发点在一个能传入其他服务器资源让web服务器进行资源申请（去访问传入的url地址并请求文件）。  </p>
+<h3 id="3-2-漏洞常见出没位置"><a href="#3-2-漏洞常见出没位置" class="headerlink" title="3.2 漏洞常见出没位置"></a>3.2 漏洞常见出没位置</h3><p>分享位置，可以通过URL地址分享网页内容<br>转码服务<br>在线翻译<br>图片加载与下载：通过URL地址加载或下载<br>图片，文章收藏功能<br>未公布的api（接口或者叫插件）实现以及其他调用URL的功能<br>从URL关键字中寻找。如：<br>share/wap/url/link/src/source/target/u/3g/display/sourceURL/imageURL/domain等  </p>
+<h3 id="3-3-漏洞验证"><a href="#3-3-漏洞验证" class="headerlink" title="3.3 漏洞验证"></a>3.3 漏洞验证</h3><h4 id="3-3-1"><a href="#3-3-1" class="headerlink" title="3.3.1"></a>3.3.1</h4><p>由于ssrf的攻击方式是构造伪造服务器请求的安全漏洞，所以我们就可以通过抓包分析发送的请求是否是由服务器发送的来判断是否存在ssrf漏洞。  </p>
+<h4 id="3-3-2"><a href="#3-3-2" class="headerlink" title="3.3.2"></a>3.3.2</h4><p> 通过源码，查看请求资源的方式，如果这个资源是服务器请求过来的如：<a href="http://www.xxx.com/a.php?image=（地址），这种形式就有可能出现SSRF漏洞。" target="_blank" rel="external">http://www.xxx.com/a.php?image=（地址），这种形式就有可能出现SSRF漏洞。</a></p>
+<h2 id="4-ssrf经典案例分析"><a href="#4-ssrf经典案例分析" class="headerlink" title="4.ssrf经典案例分析"></a>4.ssrf经典案例分析</h2><p>百度某处SSRF可漫游内网<br>漏洞在站长工具-移动专区-移动友好度里面<br><a href="http://zhanzhang.baidu.com/mf/index?site=http://baidu.com" target="_blank" rel="external">http://zhanzhang.baidu.com/mf/index?site=http://baidu.com</a><br>点击“一键检测”，就会在他们的移动终端浏览器访问且截图返回给你<br>虽然他在这里对网址做了一点限制<br><img src="http://i.imgur.com/7RbvaLr.png" alt=""><br>这里攻击者在自己的公网网站上放一个文件 嵌入一个百度的内网地址 再检测访问这个文件。<br><img src="http://i.imgur.com/FNJz4nm.png" alt=""><br><img src="http://i.imgur.com/yIqXYkd.png" alt=""><br><img src="http://i.imgur.com/EjblyQu.png" alt=""><br><img src="http://i.imgur.com/n2Qnp7K.png" alt=""><br>以上都是用这个方法访问到的二级域名，比如emp01.baidu.com这种同一内网的其他网站。<br><img src="http://i.imgur.com/neAIumk.png" alt=""><br>通过UA（浏览器类型）得知是ios8系统，<br>结合之前的iphone浏览器漏洞，就可以导致这台服务器终端注销，拒绝服务。<br>这就是一个典型的ssrf通过服务器请求自身所在网段的其他信息，造成的漏洞。    </p>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h2><p>ssrf说到底就是用服务器自身的请求客户想要的其他地方的资源的功能，来请求自身内网资源，越过了客户这一层，也可以算是一种逻辑漏洞。  </p>
 
       
 
@@ -262,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/30/hello-world/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/31/ssrf/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,15 +267,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/30/hello/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/31/uploadfile/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          hello
+          (no title)
         
       </div>
     </a>
   
+  
+    <a href="/2017/10/31/sql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
