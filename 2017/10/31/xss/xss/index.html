@@ -6,24 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Xss Game | Hexo</title>
+  <title>Xss Game | Da7ura_n0ir</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="xss小游戏前段时间哈士奇师傅推荐的的一个xss小游戏源码，中间断断续续做了一些，也算是进行一个小总结吧。（JavaScript需要开一个坑了）反正我觉得xss也算一种注入吧。链接：http://pan.baidu.com/s/1gfIGcgz 密码：cynn 搞搞搞开始搞的时候怎么都弹不出来，F12之后发现是浏览器的xss过滤脚本，火狐，谷歌，ie，都有。调整下安全等级正式开始。1.最简单的">
+<meta name="keywords" content="XSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xss Game">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/XSS/xss/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Da7ura_n0ir">
 <meta property="og:description" content="xss小游戏前段时间哈士奇师傅推荐的的一个xss小游戏源码，中间断断续续做了一些，也算是进行一个小总结吧。（JavaScript需要开一个坑了）反正我觉得xss也算一种注入吧。链接：http://pan.baidu.com/s/1gfIGcgz 密码：cynn 搞搞搞开始搞的时候怎么都弹不出来，F12之后发现是浏览器的xss过滤脚本，火狐，谷歌，ie，都有。调整下安全等级正式开始。1.最简单的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://i.imgur.com/UqUI0MY.png">
 <meta property="og:image" content="http://i.imgur.com/ymx40gX.png">
-<meta property="og:updated_time" content="2017-11-01T03:23:49.486Z">
+<meta property="og:updated_time" content="2017-11-02T04:19:40.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xss Game">
 <meta name="twitter:description" content="xss小游戏前段时间哈士奇师傅推荐的的一个xss小游戏源码，中间断断续续做了一些，也算是进行一个小总结吧。（JavaScript需要开一个坑了）反正我觉得xss也算一种注入吧。链接：http://pan.baidu.com/s/1gfIGcgz 密码：cynn 搞搞搞开始搞的时候怎么都弹不出来，F12之后发现是浏览器的xss过滤脚本，火狐，谷歌，ie，都有。调整下安全等级正式开始。1.最简单的">
 <meta name="twitter:image" content="http://i.imgur.com/UqUI0MY.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Da7ura_n0ir" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -60,9 +61,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">For study</a></li>
-	        
-				<li><a href="/me">For me</a></li>
+				<li><a href="/">主页</a></li>
 	        
 			</ul>
 		</nav>
@@ -90,7 +89,7 @@
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/da7uran0ir/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -118,8 +117,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -131,7 +128,7 @@
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/da7uran0ir/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -140,9 +137,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">For study</a></li>
-		        
-					<li style="width: 50%"><a href="/me">For me</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -238,6 +233,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">XSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -437,6 +443,46 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">interesting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

@@ -6,26 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>XXE | Hexo</title>
+  <title>XXE | Da7ura_n0ir</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="xxe学习记录1.xml基础1.1  xml-dtd&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;    &amp;lt;!DOCTYPE note [   &amp;lt;!ELEMENT note (to,from,heading,body)&amp;gt;   &amp;lt;!ELEMENT to (#PCDATA)&amp;gt;   &amp;lt;!ELEMENT from (#PCDATA)&amp;gt;">
+<meta name="keywords" content="XXE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XXE">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/XXE/xxe/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Da7ura_n0ir">
 <meta property="og:description" content="xxe学习记录1.xml基础1.1  xml-dtd&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;    &amp;lt;!DOCTYPE note [   &amp;lt;!ELEMENT note (to,from,heading,body)&amp;gt;   &amp;lt;!ELEMENT to (#PCDATA)&amp;gt;   &amp;lt;!ELEMENT from (#PCDATA)&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://i.imgur.com/1q84kWZ.png">
 <meta property="og:image" content="http://i.imgur.com/g8koU0P.png">
 <meta property="og:image" content="http://i.imgur.com/PWAJ6TP.png">
 <meta property="og:image" content="http://i.imgur.com/7C4tJpw.png">
-<meta property="og:updated_time" content="2017-11-01T03:52:12.227Z">
+<meta property="og:updated_time" content="2017-11-02T04:19:30.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XXE">
 <meta name="twitter:description" content="xxe学习记录1.xml基础1.1  xml-dtd&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;    &amp;lt;!DOCTYPE note [   &amp;lt;!ELEMENT note (to,from,heading,body)&amp;gt;   &amp;lt;!ELEMENT to (#PCDATA)&amp;gt;   &amp;lt;!ELEMENT from (#PCDATA)&amp;gt;">
 <meta name="twitter:image" content="http://i.imgur.com/1q84kWZ.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Da7ura_n0ir" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -62,9 +63,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">For study</a></li>
-	        
-				<li><a href="/me">For me</a></li>
+				<li><a href="/">主页</a></li>
 	        
 			</ul>
 		</nav>
@@ -92,7 +91,7 @@
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/da7uran0ir/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -120,8 +119,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -133,7 +130,7 @@
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/da7uran0ir/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -142,9 +139,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">For study</a></li>
-		        
-					<li style="width: 50%"><a href="/me">For me</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -278,6 +273,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">XXE</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -342,7 +348,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/01/环境搭建/Hexo-for-Blog-in-Github/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/01/环境配置/Hexo-for-Blog-in-Github/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -477,6 +483,46 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">interesting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

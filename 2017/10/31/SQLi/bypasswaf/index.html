@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Bypass WAF | Hexo</title>
+  <title>Bypass WAF | Da7ura_n0ir</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="绕过WAF（仅对正则）前言前段时间说的会新开一篇记录waf，进行了一波收集之后发现自己还是太菜了，waf说你对力量一无所知，翻阅资料之后，知道了waf这点高深莫测，bypass有很多方面  从架构层Bypass WAF 。   从资源限角度bypass WAF。   从协议层面bypass WAF。   从规则缺陷bypass WAF。    这里只对目前我能理解范围内规则缺陷进行整理从目前能找">
+<meta name="keywords" content="SQLi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bypass WAF">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/SQLi/bypasswaf/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Da7ura_n0ir">
 <meta property="og:description" content="绕过WAF（仅对正则）前言前段时间说的会新开一篇记录waf，进行了一波收集之后发现自己还是太菜了，waf说你对力量一无所知，翻阅资料之后，知道了waf这点高深莫测，bypass有很多方面  从架构层Bypass WAF 。   从资源限角度bypass WAF。   从协议层面bypass WAF。   从规则缺陷bypass WAF。    这里只对目前我能理解范围内规则缺陷进行整理从目前能找">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-01T03:59:31.472Z">
+<meta property="og:updated_time" content="2017-11-02T04:20:31.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bypass WAF">
 <meta name="twitter:description" content="绕过WAF（仅对正则）前言前段时间说的会新开一篇记录waf，进行了一波收集之后发现自己还是太菜了，waf说你对力量一无所知，翻阅资料之后，知道了waf这点高深莫测，bypass有很多方面  从架构层Bypass WAF 。   从资源限角度bypass WAF。   从协议层面bypass WAF。   从规则缺陷bypass WAF。    这里只对目前我能理解范围内规则缺陷进行整理从目前能找">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Da7ura_n0ir" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -57,9 +58,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">For study</a></li>
-	        
-				<li><a href="/me">For me</a></li>
+				<li><a href="/">主页</a></li>
 	        
 			</ul>
 		</nav>
@@ -87,7 +86,7 @@
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/da7uran0ir/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -115,8 +114,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -128,7 +125,7 @@
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/da7uran0ir/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -137,9 +134,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">For study</a></li>
-		        
-					<li style="width: 50%"><a href="/me">For me</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -311,6 +306,17 @@ select * from table where a=1 union/* and b=*/select 1,pass/* limit */from users
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SQLi</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -385,7 +391,7 @@ select * from table where a=1 union/* and b=*/select 1,pass/* limit */from users
     </a>
   
   
-    <a href="/2017/10/31/环境搭建/blog/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/31/环境配置/blog/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Blog Set</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -510,6 +516,46 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">interesting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

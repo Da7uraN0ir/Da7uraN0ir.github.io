@@ -6,13 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>UploadFiles | Hexo</title>
+  <title>UploadFiles | Da7ura_n0ir</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整体">
+<meta name="keywords" content="uploadfile">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UploadFiles">
 <meta property="og:url" content="http://yoursite.com/2017/10/31/uploadfile/uploadfile/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Da7ura_n0ir">
 <meta property="og:description" content="1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整体">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://i.imgur.com/VIqFkG1.png">
@@ -32,13 +33,13 @@
 <meta property="og:image" content="http://i.imgur.com/UqKVbD7.png">
 <meta property="og:image" content="http://i.imgur.com/6Nk8Qd3.png">
 <meta property="og:image" content="http://i.imgur.com/hh5Y4He.png">
-<meta property="og:updated_time" content="2017-11-01T03:23:48.116Z">
+<meta property="og:updated_time" content="2017-11-02T04:19:51.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UploadFiles">
 <meta name="twitter:description" content="1.什么是文件上传漏洞文件上传漏洞是说用户上传了一个可执行的脚本文件（就是一个能在服务器上被解析执行的文件），并通过这个脚本文件获得执行服务端命令的能力。这种漏洞往往是为直接和致命的。文件上传这个功能本身是没有问题的，问题出现在文件上传之后服务器怎么去出来文件，解释文件。如果服务器的处理逻辑做的不够安全，就会导致攻击者拿到他想拿到的东西。本文将会从文件上传的途中会遇到哪些阻拦开始讲，到最后的整体">
 <meta name="twitter:image" content="http://i.imgur.com/VIqFkG1.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Da7ura_n0ir" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -75,9 +76,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">For study</a></li>
-	        
-				<li><a href="/me">For me</a></li>
+				<li><a href="/">主页</a></li>
 	        
 			</ul>
 		</nav>
@@ -105,7 +104,7 @@
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/da7uran0ir/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -133,8 +132,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -146,7 +143,7 @@
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/da7uran0ir/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -155,9 +152,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">For study</a></li>
-		        
-					<li style="width: 50%"><a href="/me">For me</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -262,6 +257,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">uploadfile</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -461,6 +467,46 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">interesting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
