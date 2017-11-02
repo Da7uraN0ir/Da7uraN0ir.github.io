@@ -554,6 +554,87 @@
 
 
   
+    <article id="post-php支持的协议/zlib,bzip2,zip协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/">zlib,bzip2,zip协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--markdown-->
+<h2 id="zlib-bzip2-zip"><a href="#zlib-bzip2-zip" class="headerlink" title="zlib://   bzip2://  zip://"></a>zlib://   bzip2://  zip://</h2><p>zlib:// – bzip2:// – zip:// — 压缩流</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p><code>zlib</code>: <code>PHP 4.0.4-PHP 4.2.3</code>（仅支持带 fopencookie 的系统）<br><code>compress.zlib://</code>和 <code>compress.bzip2://``PHP 4.3.0</code> 及以上<br><code>zlib</code>:的功能类似 gzopen()，但是 其数据流还能被 fread() 和其他文件系统函数使用。 自 PHP 4.3.0 后这个不建议被使用，因为会和其他带“:”字符的文件名混淆;请使用 compress.zlib:// 作为替代。<br><code>compress.zlib://</code>,<code>compress.bzip2://</code>和<code>gzopen()</code>,<code>bzopen()</code>是相等的。并且可以在不支持 fopencookie 的系统中使用。<br>ZIP 扩展 注册了 zip: 封装协议。</p>
+<h3 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h3><p><code>compress.zlib://file.gz</code><br><code>compress.bzip2://file.bz2</code><br><code>zip://archive.zip#dir/file.txt</code></p>
+<h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>封装协议摘要<br>|属性|    支持<br>|-|-<br>|受限于 allow_url_fopen    |No<br>|允许读取|    Yes<br>|允许写入|    Yes（除了 zip://）<br>|允许附加    |Yes（除了 zip://）<br>|允许同时读写|    No<br>|支持 stat()|    No，请使用普通的 file:// 封装器统计压缩文件。<br>|支持 unlink()|    No，请使用 file:// 封装器删除压缩文件。<br>|支持 rename()|    No<br>|支持 mkdir()    |No|<br>|支持 rmdir()    |No|</p>
+<h3 id="EXAMPLE"><a href="#EXAMPLE" class="headerlink" title="EXAMPLE"></a>EXAMPLE</h3><hr>
+<h5 id="example-1"><a href="#example-1" class="headerlink" title="example 1"></a>example 1</h5><p>Example on how to read an entry from a ZIP archive (file “bar.txt” inside “./foo.zip”):<br>可以读取zip包里的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">$fp = fopen(&apos;zip://./foo.zip#bar.txt&apos;, &apos;r&apos;);</div><div class="line">if( $fp )&#123;</div><div class="line">    while( !feof($fp) )&#123;</div><div class="line">        echo fread($fp, 8192);</div><div class="line">    &#125;</div><div class="line">    fclose($fp);</div><div class="line">&#125;</div><div class="line"></div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<h5 id="example-2"><a href="#example-2" class="headerlink" title="example 2"></a>example 2</h5><p>One-liners to gzip and ungzip a file:<br>压缩包和解压包<br><code>copy(&#39;file.txt&#39;,&#39;compress.zlib://&#39;.&#39;file.txt.gz&#39;);</code><br><code>copy(&#39;compress.zlib://&#39;.&#39;file.txt.gz&#39;,&#39;file.txt&#39;);</code>  </p>
+<h5 id="example-3"><a href="#example-3" class="headerlink" title="example 3"></a>example 3</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php支持的协议</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-php支持的协议/data协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -607,87 +688,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/02/php支持的协议/data协议/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-php支持的协议/zlib,bzip2,zip协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/">zlib,bzip2,zip协议</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/" class="archive-article-date">
-  	<time datetime="2017-11-02T02:57:11.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!--markdown-->
-<h2 id="zlib-bzip2-zip"><a href="#zlib-bzip2-zip" class="headerlink" title="zlib://   bzip2://  zip://"></a>zlib://   bzip2://  zip://</h2><p>zlib:// – bzip2:// – zip:// — 压缩流</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p><code>zlib</code>: <code>PHP 4.0.4-PHP 4.2.3</code>（仅支持带 fopencookie 的系统）<br><code>compress.zlib://</code>和 <code>compress.bzip2://``PHP 4.3.0</code> 及以上<br><code>zlib</code>:的功能类似 gzopen()，但是 其数据流还能被 fread() 和其他文件系统函数使用。 自 PHP 4.3.0 后这个不建议被使用，因为会和其他带“:”字符的文件名混淆;请使用 compress.zlib:// 作为替代。<br><code>compress.zlib://</code>,<code>compress.bzip2://</code>和<code>gzopen()</code>,<code>bzopen()</code>是相等的。并且可以在不支持 fopencookie 的系统中使用。<br>ZIP 扩展 注册了 zip: 封装协议。</p>
-<h3 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h3><p><code>compress.zlib://file.gz</code><br><code>compress.bzip2://file.bz2</code><br><code>zip://archive.zip#dir/file.txt</code></p>
-<h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>封装协议摘要<br>|属性|    支持<br>|-|-<br>|受限于 allow_url_fopen    |No<br>|允许读取|    Yes<br>|允许写入|    Yes（除了 zip://）<br>|允许附加    |Yes（除了 zip://）<br>|允许同时读写|    No<br>|支持 stat()|    No，请使用普通的 file:// 封装器统计压缩文件。<br>|支持 unlink()|    No，请使用 file:// 封装器删除压缩文件。<br>|支持 rename()|    No<br>|支持 mkdir()    |No|<br>|支持 rmdir()    |No|</p>
-<h3 id="EXAMPLE"><a href="#EXAMPLE" class="headerlink" title="EXAMPLE"></a>EXAMPLE</h3><hr>
-<h5 id="example-1"><a href="#example-1" class="headerlink" title="example 1"></a>example 1</h5><p>Example on how to read an entry from a ZIP archive (file “bar.txt” inside “./foo.zip”):<br>可以读取zip包里的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">$fp = fopen(&apos;zip://./foo.zip#bar.txt&apos;, &apos;r&apos;);</div><div class="line">if( $fp )&#123;</div><div class="line">    while( !feof($fp) )&#123;</div><div class="line">        echo fread($fp, 8192);</div><div class="line">    &#125;</div><div class="line">    fclose($fp);</div><div class="line">&#125;</div><div class="line"></div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="example-2"><a href="#example-2" class="headerlink" title="example 2"></a>example 2</h5><p>One-liners to gzip and ungzip a file:<br>压缩包和解压包<br><code>copy(&#39;file.txt&#39;,&#39;compress.zlib://&#39;.&#39;file.txt.gz&#39;);</code><br><code>copy(&#39;compress.zlib://&#39;.&#39;file.txt.gz&#39;,&#39;file.txt&#39;);</code>  </p>
-<h5 id="example-3"><a href="#example-3" class="headerlink" title="example 3"></a>example 3</h5>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php支持的协议</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/">show all >></a>
         </p>
       
 
@@ -1071,15 +1071,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1087,11 +1083,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">interesting</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
