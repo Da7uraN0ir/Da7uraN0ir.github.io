@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/create-repository.png">
 <meta property="og:image" content="http://yoursite.com/img/setup-git.png">
-<meta property="og:updated_time" content="2017-11-02T04:15:11.146Z">
+<meta property="og:updated_time" content="2017-11-02T05:57:40.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo for Blog in Github">
 <meta name="twitter:description" content="创建一个项目创建一个新的项目，项目名必须和userid相同   git for windows下载Git安装：https://git-scm.com/downloads一直默认即可，除了这里这样设置会使用方便些   Node.js下载:x86 https://nodejs.org/dist/v4.2.3/node-v4.2.3-x86.msix64 https://nodejs.org/dist/">
@@ -248,6 +248,7 @@
 <h2 id="RSS不显示"><a href="#RSS不显示" class="headerlink" title="RSS不显示"></a>RSS不显示</h2><h3 id="安装RSS插件"><a href="#安装RSS插件" class="headerlink" title="安装RSS插件"></a>安装RSS插件</h3><p><code>npm install hexo-generator-feed --save</code>  </p>
 <h3 id="开启RSS功能"><a href="#开启RSS功能" class="headerlink" title="开启RSS功能"></a>开启RSS功能</h3><p>编辑<code>hexo/_config.yml</code>，添加如下代码：<br><code>rss: /atom.xml</code> #rss地址  默认即可</p>
 <h2 id="修改头像"><a href="#修改头像" class="headerlink" title="修改头像"></a>修改头像</h2><p>找到<code>/theme</code>,找到你当前主题的<code>_config.yml</code>，然后<code>avatar: /img/timg.jpg</code>,设置<code>avatar</code>为这个值，<code>/img</code>在该主题目录下的<code>source</code>文件夹下<br>然后找到<code>/layout/_partial/left-col.ejs</code>第六行–&gt;<code>&lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot; class=&quot;js-avatar show&quot; /&gt;</code>改成这个</p>
+<h2 id="The-file-will-have-its-original-line-endings-in-your-working-directory-问题"><a href="#The-file-will-have-its-original-line-endings-in-your-working-directory-问题" class="headerlink" title="The file will have its original line endings in your working directory.问题"></a>The file will have its original line endings in your working directory.问题</h2><p><code>git config --global core.autocrlf false</code><br><code>hexo clean</code><br><code>hexo g</code><br><code>hexo d</code></p>
 
       
 
@@ -501,11 +502,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XXE</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,10 +519,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
