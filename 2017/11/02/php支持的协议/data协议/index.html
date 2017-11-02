@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>data 协议 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="data://data:// — 数据（RFC 2397） 说明 ¶自 PHP 5.2.0 起 data:（» RFC 2397）数据流封装器开始有效。 用法 ¶data://text/plain;base64,data:资源类型;编码,内容1data:[&amp;lt;mime type&amp;gt;][;charset=&amp;lt;charset&amp;gt;][;base64],&amp;lt;encoded data&amp;g">
+  <meta name="description" content="data://data:// — 数据（RFC 2397） 说明 ¶自 PHP 5.2.0 起 data:（» RFC 2397）数据流封装器开始有效。 用法 ¶data://text/plain;base64,data:资源类型;编码,内容1data:[&amp;lt;mime type&amp;gt;][;charset=&amp;lt;charset&amp;gt;][;base64],&amp;lt;encoded data&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="data 协议">
 <meta property="og:url" content="http://yoursite.com/2017/11/02/php支持的协议/data协议/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="data://data:// — 数据（RFC 2397） 说明 ¶自 PHP 5.2.0 起 data:（» RFC 2397）数据流封装器开始有效。 用法 ¶data://text/plain;base64,data:资源类型;编码,内容1data:[&amp;lt;mime type&amp;gt;][;charset=&amp;lt;charset&amp;gt;][;base64],&amp;lt;encoded data&amp;g">
+<meta property="og:description" content="data://data:// — 数据（RFC 2397） 说明 ¶自 PHP 5.2.0 起 data:（» RFC 2397）数据流封装器开始有效。 用法 ¶data://text/plain;base64,data:资源类型;编码,内容1data:[&amp;lt;mime type&amp;gt;][;charset=&amp;lt;charset&amp;gt;][;base64],&amp;lt;encoded data&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-10T09:49:50.771Z">
+<meta property="og:updated_time" content="2017-11-02T03:13:04.077Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="data://data:// — 数据（RFC 2397） 说明 ¶自 PHP 5.2.0 起 data:（» RFC 2397）数据流封装器开始有效。 用法 ¶data://text/plain;base64,data:资源类型;编码,内容1data:[&amp;lt;mime type&amp;gt;][;charset=&amp;lt;charset&amp;gt;][;base64],&amp;lt;encoded data&amp;g">
+<meta name="twitter:title" content="data 协议">
+<meta name="twitter:description" content="data://data:// — 数据（RFC 2397） 说明 ¶自 PHP 5.2.0 起 data:（» RFC 2397）数据流封装器开始有效。 用法 ¶data://text/plain;base64,data:资源类型;编码,内容1data:[&amp;lt;mime type&amp;gt;][;charset=&amp;lt;charset&amp;gt;][;base64],&amp;lt;encoded data&amp;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,12 +157,28 @@
             <article id="post-php支持的协议/data协议" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      data 协议
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/data协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="data"><a href="#data" class="headerlink" title="data://"></a>data://</h3><p>data:// — 数据（RFC 2397）</p>
+        <!--markdown-->
+<h3 id="data"><a href="#data" class="headerlink" title="data://"></a>data://</h3><p>data:// — 数据（RFC 2397）</p>
 <h3 id="说明-¶"><a href="#说明-¶" class="headerlink" title="说明 ¶"></a>说明 ¶</h3><p>自 PHP 5.2.0 起 data:（» RFC 2397）数据流封装器开始有效。</p>
 <h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>data://text/plain;base64,<br>data:资源类型;编码,内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:[&lt;mime type&gt;][;charset=&lt;charset&gt;][;base64],&lt;encoded data&gt;</div></pre></td></tr></table></figure></p>
-<p>第一部分是 <code>data</code>: 协议头，它标识这个内容为一个 data URI 资源。<br>第二部分是 <code>MIME</code> 类型，表示这串内容的展现方式，比如：text/plain，则以文本类型展示，image/jpeg，以 jpeg 图片形式展示，同样，客户端也会以这个 MIME 类型来解析数据。<br>第三部分是编码设置，默认编码是 charset=US-ASCII,即数据部分的每个字符都会自动编码为 %xx，<br>关于编码的测试，可以在浏览器地址框输入分别输入下面两串内容，查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">效果：// output: ä½ å¥½             -&gt;使用默认的编码展示，故乱码</div><div class="line">data:text/html,你好  </div><div class="line">// output: 你好 -&gt; 使用 UTF-8 展示</div><div class="line">data:text/html;charset=UTF-8,你好 </div><div class="line">// output: 浣犲ソ -&gt; 使用 gbk 展示（浏览器默认编码 UTF-8，故乱码）</div><div class="line">data:text/html;charset=gbk,你好 </div><div class="line">// output: 你好 -&gt; UTF-8 编码，内容先使用 base64 解码，然后展示</div><div class="line">data:text/html;charset=UTF-8;base64,5L2g5aW9</div></pre></td></tr></table></figure></p>
+<p>第一部分是 <code>data</code>: 协议头，它标识这个内容为一个 data URI 资源。<br>第二部分是 <code>MIME</code> 类型，表示这串内容的展现方式，比如：text/plain，则以文本类型展示，image/jpeg，以 jpeg 图片形式展示，同样，客户端也会以这个 MIME 类型来解析数据。<br>第三部分是编码设置，默认编码是 charset=US-ASCII,即数据部分的每个字符都会自动编码为 %xx，<br>关于编码的测试，可以在浏览器地址框输入分别输入下面两串内容，查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">效果：// output: ä½ å¥½             -&gt;使用默认的编码展示，故乱码</div><div class="line">data:text/html,你好  </div><div class="line">// output: 你好 -&gt; 使用 UTF-8 展示</div><div class="line">data:text/html;charset=UTF-8,你好</div><div class="line">// output: 浣犲ソ -&gt; 使用 gbk 展示（浏览器默认编码 UTF-8，故乱码）</div><div class="line">data:text/html;charset=gbk,你好</div><div class="line">// output: 你好 -&gt; UTF-8 编码，内容先使用 base64 解码，然后展示</div><div class="line">data:text/html;charset=UTF-8;base64,5L2g5aW9</div></pre></td></tr></table></figure></p>
 <p>第四部分是 base64编码设定，这是一个可选项，base64 编码中仅包含0-9,a-z,A-Z,+,/,=，其中 = 是用来编码补白的。<br>最后一部分为这个<code>Data URI</code>承载的内容，它可以是纯文本编写的内容，也可以是经过 base64编码 的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">data:,&lt;文本数据&gt;</div><div class="line">data:text/plain,&lt;文本数据&gt;</div><div class="line">data:text/html,&lt;HTML代码&gt;</div><div class="line">data:text/html;base64,&lt;base64编码的HTML代码&gt;</div><div class="line">data:text/css,&lt;CSS代码&gt;</div><div class="line">data:text/css;base64,&lt;base64编码的CSS代码&gt;</div><div class="line">data:text/javascript,&lt;Javascript代码&gt;</div><div class="line">data:text/javascript;base64,&lt;base64编码的Javascript代码&gt;</div><div class="line">data:image/gif;base64,base64编码的gif图片数据</div><div class="line">data:image/png;base64,base64编码的png图片数据</div><div class="line">data:image/jpeg;base64,base64编码的jpeg图片数据</div><div class="line">data:image/x-icon;base64,base64编码的icon图片数据</div></pre></td></tr></table></figure></p>
 <h3 id="可选项-¶"><a href="#可选项-¶" class="headerlink" title="可选项 ¶"></a>可选项 ¶</h3><p>封装协议摘要<br>|属性                        |支持<br>|-                          |-<br>|受限于 allow_url_fopen        |No<br>|受限于 allow_url_include   |Yes<br>|允许读取                   |Yes<br>|允许写入                   |No<br>|允许追加                   |No<br>|允许同时读写               |No<br>|支持 stat()                |No<br>|支持 unlink()              |No<br>|支持 rename()              |No<br>|支持 mkdir()               |No<br>|支持 rmdir()               |No</p>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h5 id="example1"><a href="#example1" class="headerlink" title="example1"></a>example1</h5><p>打印 data:// 的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// 打印 &quot;I love PHP&quot;</div><div class="line">echo file_get_contents(&apos;data://text/plain;base64,SSBsb3ZlIFBIUAo=&apos;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
@@ -260,18 +276,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/02/php支持的协议/ftp协议/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          zlib,bzip2,zip协议
         
       </div>
     </a>
   
   
-    <a href="/2017/11/02/php支持的协议/file协议/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2017/11/02/php支持的协议/phar/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">phar协议</div>
       <i class="icon-circle-right"></i>
     </a>
   

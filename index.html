@@ -155,7 +155,7 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-逆向/问鼎一道re" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-除探逆向/问鼎一道re" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -174,115 +174,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/逆向/问鼎一道re/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python/zip（rar）文件口令爆破" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"># import zipfile</div><div class="line">import rarfile</div><div class="line"># def extractfile(zfile,password):</div><div class="line">#     try:</div><div class="line">#         zfile.extractall(pwd=password)</div><div class="line">#         return password</div><div class="line">#     except:</div><div class="line">#         return 0</div><div class="line">def rarextractfile(zfile,password):</div><div class="line">    try:</div><div class="line">        zfile.extractall(pwd=password)</div><div class="line">        return password</div><div class="line">    except:</div><div class="line">        return 0</div><div class="line"></div><div class="line">def main():</div><div class="line">    zfile=rarfile.RarFile(&apos;2.rar&apos;)</div><div class="line">    passfile = open(&apos;1.txt&apos;)</div><div class="line">    # for line in passfile.readlines():</div><div class="line">    #     password = line.strip(&apos;\n&apos;)</div><div class="line">    #     guess = extractfile(zfile,password)</div><div class="line">    #     if guess:</div><div class="line">    #         print &apos;[+] Password = &apos; + password + &apos;\n&apos;</div><div class="line">    #         exit(0)</div><div class="line">    #     else:</div><div class="line">    #         print &apos;[-] Password = &apos; + password + &apos;\n&apos;</div><div class="line">    for line in passfile.readlines():</div><div class="line">        password = line.strip(&apos;\n&apos;)</div><div class="line">        guess = rarextractfile(zfile,password)</div><div class="line">        if guess:</div><div class="line">            print &apos;[+] Password = &apos; + password + &apos;\n&apos;</div><div class="line">            exit(0)</div><div class="line">        else:</div><div class="line">            print &apos;[-] errPassword = &apos; + password + &apos;\n&apos;</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    main()</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/python/zip（rar）文件口令爆破/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python/多进程爆破cet4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line">import requests</div><div class="line">from multiprocessing import Pool</div><div class="line">tit=&apos;听&apos;.decode(&apos;utf-8&apos;)</div><div class="line">def ck(url):</div><div class="line">    url1=&apos;http://www.chsi.com.cn/cet/query?zkzh=5100601711&apos;+str(url)+&apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re1 = requests.get(url1)</div><div class="line">    try:</div><div class="line">        if tit in re1.text:</div><div class="line">            print &apos;find:5100601711&apos;+str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100601711&apos;+str(url)+&apos;失败&apos;</div><div class="line">    except ZeroDivisionError, e:</div><div class="line">        print e.message</div><div class="line">    url2 = &apos;http://www.chsi.com.cn/cet/query?zkzh=5100611711&apos; + str(url) + &apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re2 = requests.get(url2)</div><div class="line">    try:</div><div class="line">        if tit in re2.text:</div><div class="line">            print &apos;find:5100611711&apos; + str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100611711&apos; + str(url) + &apos;失败&apos;</div><div class="line">    except ConnectionError, e:</div><div class="line">        print e.message</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    pool=Pool(100)</div><div class="line">    f = open(&apos;G:\/1234.txt&apos;)</div><div class="line">    list = []</div><div class="line">    for line in f.readlines():</div><div class="line">        line = line.strip(&apos;\n&apos;)</div><div class="line">        list.append(line)</div><div class="line">    pool.map(ck,list)</div><div class="line">    pool.close()</div><div class="line">    pool.join()</div><div class="line"># u=&apos;http://www.chsi.com.cn/cet/query&apos;</div><div class="line"># tit=&apos;听力&apos;.decode(&apos;utf-8&apos;)</div><div class="line"># for a in range(0,10):</div><div class="line">#     for b in range(0, 10):</div><div class="line">#         for c in range(0, 10):</div><div class="line">#             for d in range(0, 10):</div><div class="line">#                 for e in range(0, 10):</div><div class="line">#                     get=&apos;?zkzh=5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;&amp;xm=左松林&apos;</div><div class="line">#                     url=u+get</div><div class="line">#                     re=requests.get(url)</div><div class="line">#                     try:</div><div class="line">#                         if tit in re.text:</div><div class="line">#                             print &apos;find:5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)</div><div class="line">#                         else:</div><div class="line">#                             print &apos;5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;失败&apos;</div><div class="line">#                     except ZeroDivisionError, e:</div><div class="line">#                         print e.message</div></pre></td></tr></table></figure>
-<p>from multiprocessing import Pool<br>进程池<br>multiprocessing模块<br>看一下Process类的构造方法：<br><code>__init__(self, group=None, target=None, name=None, args=(), kwargs={})</code><br>参数说明：<br>group：进程所属组。基本不用<br>target：表示调用对象。<br>args：表示调用对象的位置参数元组。<br>name：别名<br>kwargs：表示调用对象的字典。<br>创建进程的简单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">import multiprocessing</div><div class="line"></div><div class="line">def do(n) :</div><div class="line">  #获取当前线程的名字</div><div class="line">  name = multiprocessing.current_process().name</div><div class="line">  print name,&apos;starting&apos;</div><div class="line">  print &quot;worker &quot;, n</div><div class="line">  return </div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos; :</div><div class="line">  numList = []</div><div class="line">  for i in xrange(5) :</div><div class="line">    p = multiprocessing.Process(target=do, args=(i,))</div><div class="line">    numList.append(p)</div><div class="line">    p.start()</div><div class="line">    p.join()</div><div class="line">    print &quot;Process end.&quot;</div></pre></td></tr></table></figure></p>
-<p>执行结果：<br>Process-1 starting<br>worker  0<br>Process end.<br>Process-2 starting<br>worker  1<br>Process end.<br>Process-3 starting<br>worker  2<br>Process end.<br>Process-4 starting<br>worker  3<br>Process end.<br>Process-5 starting<br>worker  4<br>Process end.<br>创建子进程时，只需要传入一个执行函数和函数的参数，创建一个Process实例，并用其start()方法启动，这样创建进程比fork()还要简单。<br>join()方法表示等待子进程结束以后再继续往下运行，通常用于进程间的同步。<br>注意：<br>在Windows上要想使用进程模块，就必须把有关进程的代码写在当前.py文件的<code>if __name__ == ‘__main__’</code> :语句的下面，才能正常使用<code>Windows</code>下的进程模块。<code>Unix/Linux</code>下则不需要。  </p>
-<h3 id="Pool类"><a href="#Pool类" class="headerlink" title="Pool类"></a>Pool类</h3><p>在使用Python进行系统管理时，特别是同时操作多个文件目录或者远程控制多台主机，并行操作可以节约大量的时间。如果操作的对象数目不大时，还可以直接使用Process类动态的生成多个进程，十几个还好，但是如果上百个甚至更多，那手动去限制进程数量就显得特别的繁琐，此时进程池就派上用场了。<br>Pool类可以提供指定数量的进程供用户调用，当有新的请求提交到Pool中时，如果池还没有满，就会创建一个新的进程来执行请求。如果池满，请求就会告知先等待，直到池中有进程结束，才会创建新的进程来执行这些请求<br>下面介绍一下<code>multiprocessing</code>   模块下的Pool类下的几个方法  </p>
-<h4 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h4><p>函数原型：<br><code>apply(func[, args=()[, kwds={}]])</code><br>该函数用于传递不定参数，主进程会被阻塞直到函数执行结束（不建议使用，并且3.x以后不在出现）。</p>
-<h4 id="apply-async"><a href="#apply-async" class="headerlink" title="apply_async()"></a>apply_async()</h4><p>函数原型：</p>
-<p><code>apply_async(func[, args=()[, kwds={}[, callback=None]]])</code></p>
-<p>与apply用法一样，但它是非阻塞且支持结果返回进行回调。</p>
-<h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><p>函数原型：</p>
-<p><code>map(func, iterable[, chunksize=None])</code></p>
-<p>Pool类中的map方法，与内置的map函数用法行为基本一致，它会使进程阻塞直到返回结果。<br>注意，虽然第二个参数是一个迭代器，但在实际使用中，必须在整个队列都就绪后，程序才会运行子进程。</p>
-<h4 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h4><p>关闭进程池（pool），使其不在接受新的任务。</p>
-<h4 id="terminate"><a href="#terminate" class="headerlink" title="terminate()"></a>terminate()</h4><p>结束工作进程，不再处理未处理的任务。</p>
-<h4 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h4><p>主进程阻塞等待子进程的退出，join方法必须在close或terminate之后使用。<br>multiprocessing.Pool类的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">from multiprocessing import Pool</div><div class="line">def run(fn):</div><div class="line">  #fn: 函数参数是数据列表的一个元素</div><div class="line">  time.sleep(1)</div><div class="line">  return fn*fn</div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">  testFL = [1,2,3,4,5,6]  </div><div class="line">  print &apos;shunxu:&apos; #顺序执行(也就是串行执行，单进程)</div><div class="line">  s = time.time()</div><div class="line">  for fn in testFL:</div><div class="line">    run(fn)</div><div class="line"></div><div class="line">  e1 = time.time()</div><div class="line">  print &quot;顺序执行时间：&quot;, int(e1 - s)</div><div class="line"></div><div class="line">  print &apos;concurrent:&apos; #创建多个进程，并行执行</div><div class="line">  pool = Pool(5)  #创建拥有5个进程数量的进程池</div><div class="line">  #testFL:要处理的数据列表，run：处理testFL列表中数据的函数</div><div class="line">  rl =pool.map(run, testFL) </div><div class="line">  pool.close()#关闭进程池，不再接受新的进程</div><div class="line">  pool.join()#主进程阻塞等待子进程的退出</div><div class="line">  e2 = time.time()</div><div class="line">  print &quot;并行执行时间：&quot;, int(e2-e1)</div><div class="line">  print rl</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/python/多进程爆破cet4/">show all >></a>
+          <a class="article-more-a" href="/2017/11/02/除探逆向/问鼎一道re/">show all >></a>
         </p>
       
 
@@ -314,6 +206,21 @@
   
     <article id="post-python/md5截断字符串爆破" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/python/md5截断字符串爆破/">md5截断字符串比较爆破</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/python/md5截断字符串爆破/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:53.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -361,12 +268,167 @@
 
 
   
-    <article id="post-php支持的协议/ftp协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python/zip（rar）文件口令爆破" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/python/zip（rar）文件口令爆破/">zip(rar)文件口令爆破</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/python/zip（rar）文件口令爆破/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:53.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="ftp-amp-ftps"><a href="#ftp-amp-ftps" class="headerlink" title="ftp:// &amp; ftps://"></a>ftp:// &amp; ftps://</h4><p>ftp:// – ftps:// — 访问 FTP(s) URLs</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"># import zipfile</div><div class="line">import rarfile</div><div class="line"># def extractfile(zfile,password):</div><div class="line">#     try:</div><div class="line">#         zfile.extractall(pwd=password)</div><div class="line">#         return password</div><div class="line">#     except:</div><div class="line">#         return 0</div><div class="line">def rarextractfile(zfile,password):</div><div class="line">    try:</div><div class="line">        zfile.extractall(pwd=password)</div><div class="line">        return password</div><div class="line">    except:</div><div class="line">        return 0</div><div class="line"></div><div class="line">def main():</div><div class="line">    zfile=rarfile.RarFile(&apos;2.rar&apos;)</div><div class="line">    passfile = open(&apos;1.txt&apos;)</div><div class="line">    # for line in passfile.readlines():</div><div class="line">    #     password = line.strip(&apos;\n&apos;)</div><div class="line">    #     guess = extractfile(zfile,password)</div><div class="line">    #     if guess:</div><div class="line">    #         print &apos;[+] Password = &apos; + password + &apos;\n&apos;</div><div class="line">    #         exit(0)</div><div class="line">    #     else:</div><div class="line">    #         print &apos;[-] Password = &apos; + password + &apos;\n&apos;</div><div class="line">    for line in passfile.readlines():</div><div class="line">        password = line.strip(&apos;\n&apos;)</div><div class="line">        guess = rarextractfile(zfile,password)</div><div class="line">        if guess:</div><div class="line">            print &apos;[+] Password = &apos; + password + &apos;\n&apos;</div><div class="line">            exit(0)</div><div class="line">        else:</div><div class="line">            print &apos;[-] errPassword = &apos; + password + &apos;\n&apos;</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/python/zip（rar）文件口令爆破/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-python/多进程爆破cet4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/python/多进程爆破cet4/">多线程爆破cet4准考号</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/python/多进程爆破cet4/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:53.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line">import requests</div><div class="line">from multiprocessing import Pool</div><div class="line">tit=&apos;听&apos;.decode(&apos;utf-8&apos;)</div><div class="line">def ck(url):</div><div class="line">    url1=&apos;http://www.chsi.com.cn/cet/query?zkzh=5100601711&apos;+str(url)+&apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re1 = requests.get(url1)</div><div class="line">    try:</div><div class="line">        if tit in re1.text:</div><div class="line">            print &apos;find:5100601711&apos;+str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100601711&apos;+str(url)+&apos;失败&apos;</div><div class="line">    except ZeroDivisionError, e:</div><div class="line">        print e.message</div><div class="line">    url2 = &apos;http://www.chsi.com.cn/cet/query?zkzh=5100611711&apos; + str(url) + &apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re2 = requests.get(url2)</div><div class="line">    try:</div><div class="line">        if tit in re2.text:</div><div class="line">            print &apos;find:5100611711&apos; + str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100611711&apos; + str(url) + &apos;失败&apos;</div><div class="line">    except ConnectionError, e:</div><div class="line">        print e.message</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    pool=Pool(100)</div><div class="line">    f = open(&apos;G:\/1234.txt&apos;)</div><div class="line">    list = []</div><div class="line">    for line in f.readlines():</div><div class="line">        line = line.strip(&apos;\n&apos;)</div><div class="line">        list.append(line)</div><div class="line">    pool.map(ck,list)</div><div class="line">    pool.close()</div><div class="line">    pool.join()</div><div class="line"># u=&apos;http://www.chsi.com.cn/cet/query&apos;</div><div class="line"># tit=&apos;听力&apos;.decode(&apos;utf-8&apos;)</div><div class="line"># for a in range(0,10):</div><div class="line">#     for b in range(0, 10):</div><div class="line">#         for c in range(0, 10):</div><div class="line">#             for d in range(0, 10):</div><div class="line">#                 for e in range(0, 10):</div><div class="line">#                     get=&apos;?zkzh=5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;&amp;xm=左松林&apos;</div><div class="line">#                     url=u+get</div><div class="line">#                     re=requests.get(url)</div><div class="line">#                     try:</div><div class="line">#                         if tit in re.text:</div><div class="line">#                             print &apos;find:5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)</div><div class="line">#                         else:</div><div class="line">#                             print &apos;5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;失败&apos;</div><div class="line">#                     except ZeroDivisionError, e:</div><div class="line">#                         print e.message</div></pre></td></tr></table></figure>
+<p>from multiprocessing import Pool<br>进程池<br>multiprocessing模块<br>看一下Process类的构造方法：<br><code>__init__(self, group=None, target=None, name=None, args=(), kwargs={})</code><br>参数说明：<br>group：进程所属组。基本不用<br>target：表示调用对象。<br>args：表示调用对象的位置参数元组。<br>name：别名<br>kwargs：表示调用对象的字典。<br>创建进程的简单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">import multiprocessing</div><div class="line"></div><div class="line">def do(n) :</div><div class="line">  #获取当前线程的名字</div><div class="line">  name = multiprocessing.current_process().name</div><div class="line">  print name,&apos;starting&apos;</div><div class="line">  print &quot;worker &quot;, n</div><div class="line">  return</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos; :</div><div class="line">  numList = []</div><div class="line">  for i in xrange(5) :</div><div class="line">    p = multiprocessing.Process(target=do, args=(i,))</div><div class="line">    numList.append(p)</div><div class="line">    p.start()</div><div class="line">    p.join()</div><div class="line">    print &quot;Process end.&quot;</div></pre></td></tr></table></figure></p>
+<p>执行结果：<br>Process-1 starting<br>worker  0<br>Process end.<br>Process-2 starting<br>worker  1<br>Process end.<br>Process-3 starting<br>worker  2<br>Process end.<br>Process-4 starting<br>worker  3<br>Process end.<br>Process-5 starting<br>worker  4<br>Process end.<br>创建子进程时，只需要传入一个执行函数和函数的参数，创建一个Process实例，并用其start()方法启动，这样创建进程比fork()还要简单。<br>join()方法表示等待子进程结束以后再继续往下运行，通常用于进程间的同步。<br>注意：<br>在Windows上要想使用进程模块，就必须把有关进程的代码写在当前.py文件的<code>if __name__ == ‘__main__’</code> :语句的下面，才能正常使用<code>Windows</code>下的进程模块。<code>Unix/Linux</code>下则不需要。  </p>
+<h3 id="Pool类"><a href="#Pool类" class="headerlink" title="Pool类"></a>Pool类</h3><p>在使用Python进行系统管理时，特别是同时操作多个文件目录或者远程控制多台主机，并行操作可以节约大量的时间。如果操作的对象数目不大时，还可以直接使用Process类动态的生成多个进程，十几个还好，但是如果上百个甚至更多，那手动去限制进程数量就显得特别的繁琐，此时进程池就派上用场了。<br>Pool类可以提供指定数量的进程供用户调用，当有新的请求提交到Pool中时，如果池还没有满，就会创建一个新的进程来执行请求。如果池满，请求就会告知先等待，直到池中有进程结束，才会创建新的进程来执行这些请求<br>下面介绍一下<code>multiprocessing</code>   模块下的Pool类下的几个方法  </p>
+<h4 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h4><p>函数原型：<br><code>apply(func[, args=()[, kwds={}]])</code><br>该函数用于传递不定参数，主进程会被阻塞直到函数执行结束（不建议使用，并且3.x以后不在出现）。</p>
+<h4 id="apply-async"><a href="#apply-async" class="headerlink" title="apply_async()"></a>apply_async()</h4><p>函数原型：</p>
+<p><code>apply_async(func[, args=()[, kwds={}[, callback=None]]])</code></p>
+<p>与apply用法一样，但它是非阻塞且支持结果返回进行回调。</p>
+<h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><p>函数原型：</p>
+<p><code>map(func, iterable[, chunksize=None])</code></p>
+<p>Pool类中的map方法，与内置的map函数用法行为基本一致，它会使进程阻塞直到返回结果。<br>注意，虽然第二个参数是一个迭代器，但在实际使用中，必须在整个队列都就绪后，程序才会运行子进程。</p>
+<h4 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h4><p>关闭进程池（pool），使其不在接受新的任务。</p>
+<h4 id="terminate"><a href="#terminate" class="headerlink" title="terminate()"></a>terminate()</h4><p>结束工作进程，不再处理未处理的任务。</p>
+<h4 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h4><p>主进程阻塞等待子进程的退出，join方法必须在close或terminate之后使用。<br>multiprocessing.Pool类的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">from multiprocessing import Pool</div><div class="line">def run(fn):</div><div class="line">  #fn: 函数参数是数据列表的一个元素</div><div class="line">  time.sleep(1)</div><div class="line">  return fn*fn</div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">  testFL = [1,2,3,4,5,6]  </div><div class="line">  print &apos;shunxu:&apos; #顺序执行(也就是串行执行，单进程)</div><div class="line">  s = time.time()</div><div class="line">  for fn in testFL:</div><div class="line">    run(fn)</div><div class="line"></div><div class="line">  e1 = time.time()</div><div class="line">  print &quot;顺序执行时间：&quot;, int(e1 - s)</div><div class="line"></div><div class="line">  print &apos;concurrent:&apos; #创建多个进程，并行执行</div><div class="line">  pool = Pool(5)  #创建拥有5个进程数量的进程池</div><div class="line">  #testFL:要处理的数据列表，run：处理testFL列表中数据的函数</div><div class="line">  rl =pool.map(run, testFL)</div><div class="line">  pool.close()#关闭进程池，不再接受新的进程</div><div class="line">  pool.join()#主进程阻塞等待子进程的退出</div><div class="line">  e2 = time.time()</div><div class="line">  print &quot;并行执行时间：&quot;, int(e2-e1)</div><div class="line">  print rl</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/python/多进程爆破cet4/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-php支持的协议/ftp协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/ftp协议/">ftp协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/ftp协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.141Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--markdown-->
+<h4 id="ftp-amp-ftps"><a href="#ftp-amp-ftps" class="headerlink" title="ftp:// &amp; ftps://"></a>ftp:// &amp; ftps://</h4><p>ftp:// – ftps:// — 访问 FTP(s) URLs</p>
 <h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><hr>
 <p>允许通过 FTP读取存在的文件，以及创建新文件。 如果服务器不支持被动（passive）模式的 FTP，连接会失败。<br>打开文件后你既可以读也可以写，但是不能同时进行。 当远程文件已经存在于<code>ftp</code> 服务器上，如果尝试打开并写入文件的时候， 未指定上下文<code>context</code>选项<code>overwrite</code>，连接会失败。 如果要通过 <code>FTP</code>覆盖存在的文件， 指定上下文<code>context</code>的<code>overwrite</code>选项来打开、写入。 另外可使用<code>FTP</code>扩展来代替。<br>如果你设置了<code>php.ini</code>中的<code>from</code>指令， 这个值会作为匿名（<code>anonymous</code>）<code>ftp</code> 的密码。</p>
 <h5 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ftp://example.com/pub/file.txt</div><div class="line">ftp://user:password@example.com/pub/file.txt</div><div class="line">ftps://example.com/pub/file.txt</div><div class="line">ftps://user:password@example.com/pub/file.txt</div></pre></td></tr></table></figure>
@@ -428,15 +490,101 @@
 
 
   
-    <article id="post-php支持的协议/data协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-php支持的协议/zlib,bzip2,zip协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/">zlib,bzip2,zip协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="data"><a href="#data" class="headerlink" title="data://"></a>data://</h3><p>data:// — 数据（RFC 2397）</p>
+        <!--markdown-->
+<h2 id="zlib-bzip2-zip"><a href="#zlib-bzip2-zip" class="headerlink" title="zlib://   bzip2://  zip://"></a>zlib://   bzip2://  zip://</h2><p>zlib:// – bzip2:// – zip:// — 压缩流</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p><code>zlib</code>: <code>PHP 4.0.4-PHP 4.2.3</code>（仅支持带 fopencookie 的系统）<br><code>compress.zlib://</code>和 <code>compress.bzip2://``PHP 4.3.0</code> 及以上<br><code>zlib</code>:的功能类似 gzopen()，但是 其数据流还能被 fread() 和其他文件系统函数使用。 自 PHP 4.3.0 后这个不建议被使用，因为会和其他带“:”字符的文件名混淆;请使用 compress.zlib:// 作为替代。<br><code>compress.zlib://</code>,<code>compress.bzip2://</code>和<code>gzopen()</code>,<code>bzopen()</code>是相等的。并且可以在不支持 fopencookie 的系统中使用。<br>ZIP 扩展 注册了 zip: 封装协议。</p>
+<h3 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h3><p><code>compress.zlib://file.gz</code><br><code>compress.bzip2://file.bz2</code><br><code>zip://archive.zip#dir/file.txt</code></p>
+<h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>封装协议摘要<br>|属性|    支持<br>|-|-<br>|受限于 allow_url_fopen    |No<br>|允许读取|    Yes<br>|允许写入|    Yes（除了 zip://）<br>|允许附加    |Yes（除了 zip://）<br>|允许同时读写|    No<br>|支持 stat()|    No，请使用普通的 file:// 封装器统计压缩文件。<br>|支持 unlink()|    No，请使用 file:// 封装器删除压缩文件。<br>|支持 rename()|    No<br>|支持 mkdir()    |No|<br>|支持 rmdir()    |No|</p>
+<h3 id="EXAMPLE"><a href="#EXAMPLE" class="headerlink" title="EXAMPLE"></a>EXAMPLE</h3><hr>
+<h5 id="example-1"><a href="#example-1" class="headerlink" title="example 1"></a>example 1</h5><p>Example on how to read an entry from a ZIP archive (file “bar.txt” inside “./foo.zip”):<br>可以读取zip包里的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">$fp = fopen(&apos;zip://./foo.zip#bar.txt&apos;, &apos;r&apos;);</div><div class="line">if( $fp )&#123;</div><div class="line">    while( !feof($fp) )&#123;</div><div class="line">        echo fread($fp, 8192);</div><div class="line">    &#125;</div><div class="line">    fclose($fp);</div><div class="line">&#125;</div><div class="line"></div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<h5 id="example-2"><a href="#example-2" class="headerlink" title="example 2"></a>example 2</h5><p>One-liners to gzip and ungzip a file:<br>压缩包和解压包<br><code>copy(&#39;file.txt&#39;,&#39;compress.zlib://&#39;.&#39;file.txt.gz&#39;);</code><br><code>copy(&#39;compress.zlib://&#39;.&#39;file.txt.gz&#39;,&#39;file.txt&#39;);</code>  </p>
+<h5 id="example-3"><a href="#example-3" class="headerlink" title="example 3"></a>example 3</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/php支持的协议/zlib,bzip2,zip协议/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-php支持的协议/data协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/data协议/">data 协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/data协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--markdown-->
+<h3 id="data"><a href="#data" class="headerlink" title="data://"></a>data://</h3><p>data:// — 数据（RFC 2397）</p>
 <h3 id="说明-¶"><a href="#说明-¶" class="headerlink" title="说明 ¶"></a>说明 ¶</h3><p>自 PHP 5.2.0 起 data:（» RFC 2397）数据流封装器开始有效。</p>
 <h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>data://text/plain;base64,<br>data:资源类型;编码,内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:[&lt;mime type&gt;][;charset=&lt;charset&gt;][;base64],&lt;encoded data&gt;</div></pre></td></tr></table></figure></p>
-<p>第一部分是 <code>data</code>: 协议头，它标识这个内容为一个 data URI 资源。<br>第二部分是 <code>MIME</code> 类型，表示这串内容的展现方式，比如：text/plain，则以文本类型展示，image/jpeg，以 jpeg 图片形式展示，同样，客户端也会以这个 MIME 类型来解析数据。<br>第三部分是编码设置，默认编码是 charset=US-ASCII,即数据部分的每个字符都会自动编码为 %xx，<br>关于编码的测试，可以在浏览器地址框输入分别输入下面两串内容，查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">效果：// output: ä½ å¥½             -&gt;使用默认的编码展示，故乱码</div><div class="line">data:text/html,你好  </div><div class="line">// output: 你好 -&gt; 使用 UTF-8 展示</div><div class="line">data:text/html;charset=UTF-8,你好 </div><div class="line">// output: 浣犲ソ -&gt; 使用 gbk 展示（浏览器默认编码 UTF-8，故乱码）</div><div class="line">data:text/html;charset=gbk,你好 </div><div class="line">// output: 你好 -&gt; UTF-8 编码，内容先使用 base64 解码，然后展示</div><div class="line">data:text/html;charset=UTF-8;base64,5L2g5aW9</div></pre></td></tr></table></figure></p>
+<p>第一部分是 <code>data</code>: 协议头，它标识这个内容为一个 data URI 资源。<br>第二部分是 <code>MIME</code> 类型，表示这串内容的展现方式，比如：text/plain，则以文本类型展示，image/jpeg，以 jpeg 图片形式展示，同样，客户端也会以这个 MIME 类型来解析数据。<br>第三部分是编码设置，默认编码是 charset=US-ASCII,即数据部分的每个字符都会自动编码为 %xx，<br>关于编码的测试，可以在浏览器地址框输入分别输入下面两串内容，查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">效果：// output: ä½ å¥½             -&gt;使用默认的编码展示，故乱码</div><div class="line">data:text/html,你好  </div><div class="line">// output: 你好 -&gt; 使用 UTF-8 展示</div><div class="line">data:text/html;charset=UTF-8,你好</div><div class="line">// output: 浣犲ソ -&gt; 使用 gbk 展示（浏览器默认编码 UTF-8，故乱码）</div><div class="line">data:text/html;charset=gbk,你好</div><div class="line">// output: 你好 -&gt; UTF-8 编码，内容先使用 base64 解码，然后展示</div><div class="line">data:text/html;charset=UTF-8;base64,5L2g5aW9</div></pre></td></tr></table></figure></p>
 <p>第四部分是 base64编码设定，这是一个可选项，base64 编码中仅包含0-9,a-z,A-Z,+,/,=，其中 = 是用来编码补白的。<br>最后一部分为这个<code>Data URI</code>承载的内容，它可以是纯文本编写的内容，也可以是经过 base64编码 的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">data:,&lt;文本数据&gt;</div><div class="line">data:text/plain,&lt;文本数据&gt;</div><div class="line">data:text/html,&lt;HTML代码&gt;</div><div class="line">data:text/html;base64,&lt;base64编码的HTML代码&gt;</div><div class="line">data:text/css,&lt;CSS代码&gt;</div><div class="line">data:text/css;base64,&lt;base64编码的CSS代码&gt;</div><div class="line">data:text/javascript,&lt;Javascript代码&gt;</div><div class="line">data:text/javascript;base64,&lt;base64编码的Javascript代码&gt;</div><div class="line">data:image/gif;base64,base64编码的gif图片数据</div><div class="line">data:image/png;base64,base64编码的png图片数据</div><div class="line">data:image/jpeg;base64,base64编码的jpeg图片数据</div><div class="line">data:image/x-icon;base64,base64编码的icon图片数据</div></pre></td></tr></table></figure></p>
 <h3 id="可选项-¶"><a href="#可选项-¶" class="headerlink" title="可选项 ¶"></a>可选项 ¶</h3><p>封装协议摘要<br>|属性                        |支持<br>|-                          |-<br>|受限于 allow_url_fopen        |No<br>|受限于 allow_url_include   |Yes<br>|允许读取                   |Yes<br>|允许写入                   |No<br>|允许追加                   |No<br>|允许同时读写               |No<br>|支持 stat()                |No<br>|支持 unlink()              |No<br>|支持 rename()              |No<br>|支持 mkdir()               |No<br>|支持 rmdir()               |No</p>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h5 id="example1"><a href="#example1" class="headerlink" title="example1"></a>example1</h5><p>打印 data:// 的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// 打印 &quot;I love PHP&quot;</div><div class="line">echo file_get_contents(&apos;data://text/plain;base64,SSBsb3ZlIFBIUAo=&apos;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
@@ -483,12 +631,95 @@
 
 
   
-    <article id="post-php支持的协议/file协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-php支持的协议/phar" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/phar/">phar协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/phar/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.079Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="php-支持的协议"><a href="#php-支持的协议" class="headerlink" title="php 支持的协议"></a>php 支持的协议</h3><h4 id="php手册"><a href="#php手册" class="headerlink" title="php手册"></a>php手册</h4><p><a href="http://cn2.php.net/manual/zh/wrappers.file.php" target="_blank" rel="external">http://cn2.php.net/manual/zh/wrappers.file.php</a>  </p>
+        <!--markdown-->
+<h3 id="phar"><a href="#phar" class="headerlink" title="phar://"></a>phar://</h3><p>phar:// — PHP 归档</p>
+<h3 id="说明-¶"><a href="#说明-¶" class="headerlink" title="说明 ¶"></a>说明 ¶</h3><p>phar:// 数据流包装器自 PHP 5.3.0 起开始有效。详细的描述可参见 Phar 数据流包装器。</p>
+<h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>phar://</p>
+<h3 id="可选项-¶"><a href="#可选项-¶" class="headerlink" title="可选项 ¶"></a>可选项 ¶</h3><p>封装协议摘要<br>|属性                       |支持<br>|-                          |-<br>|支持 allow_url_fopen       |No<br>|支持 allow_url_include     |No<br>|允许读取                   |Yes<br>|允许写入                   |Yes<br>|允许附加                   |No<br>|允许同时读写               |Yes<br>|支持 stat()                |Yes<br>|支持 unlink()              |Yes<br>|支持 rename()              |Yes<br>|支持 mkdir()               |Yes<br>|支持 rmdir()               |Yes</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/php支持的协议/phar/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-php支持的协议/file协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/file协议/">file协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/file协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.079Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--markdown-->
+<h3 id="php-支持的协议"><a href="#php-支持的协议" class="headerlink" title="php 支持的协议"></a>php 支持的协议</h3><h4 id="php手册"><a href="#php手册" class="headerlink" title="php手册"></a>php手册</h4><p><a href="http://cn2.php.net/manual/zh/wrappers.file.php" target="_blank" rel="external">http://cn2.php.net/manual/zh/wrappers.file.php</a>  </p>
 <h4 id="file"><a href="#file" class="headerlink" title="file://"></a>file://</h4><p>file:// — 访问本地文件系统  </p>
 <h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><p>文件系统是PHP使用的默认封装协议，展现了本地文件系统。 当指定了一个相对路径（不以<figure class="highlight plain"><figcaption><span>Windows盘符开头的路径）提供的路径将基于当前的工作目录。  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">在很多情况下是脚本所在的目录，除非被修改了。 使用 CLI的时候，目录默认是脚本被调用时所在的目录。  </div><div class="line">在某些函数里，例如</div></pre></td></tr></table></figure></p>
 <p>fopen ()和 file_get_contents()， include_path<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">会可选地搜索，也作为相对的路径。  </div><div class="line">##### 用法</div></pre></td></tr></table></figure></p>
@@ -551,63 +782,28 @@
 
 
   
-    <article id="post-php支持的协议/phar" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="phar"><a href="#phar" class="headerlink" title="phar://"></a>phar://</h3><p>phar:// — PHP 归档</p>
-<h3 id="说明-¶"><a href="#说明-¶" class="headerlink" title="说明 ¶"></a>说明 ¶</h3><p>phar:// 数据流包装器自 PHP 5.3.0 起开始有效。详细的描述可参见 Phar 数据流包装器。</p>
-<h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>phar://</p>
-<h3 id="可选项-¶"><a href="#可选项-¶" class="headerlink" title="可选项 ¶"></a>可选项 ¶</h3><p>封装协议摘要<br>|属性                       |支持<br>|-                          |-<br>|支持 allow_url_fopen       |No<br>|支持 allow_url_include     |No<br>|允许读取                   |Yes<br>|允许写入                   |Yes<br>|允许附加                   |No<br>|允许同时读写               |Yes<br>|支持 stat()                |Yes<br>|支持 unlink()              |Yes<br>|支持 rename()              |Yes<br>|支持 mkdir()               |Yes<br>|支持 rmdir()               |Yes</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/php支持的协议/phar/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-php支持的协议/glob协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/glob协议/">glob协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/glob协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.063Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="glob"><a href="#glob" class="headerlink" title="glob://"></a>glob://</h3><p>glob:// — 查找匹配的文件路径模式</p>
+        <!--markdown-->
+<h3 id="glob"><a href="#glob" class="headerlink" title="glob://"></a>glob://</h3><p>glob:// — 查找匹配的文件路径模式</p>
 <h3 id="说明-¶"><a href="#说明-¶" class="headerlink" title="说明 ¶"></a>说明 ¶</h3><p>glob: 数据流包装器自 PHP 5.3.0 起开始有效。</p>
 <h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>glob://</p>
 <h3 id="可选项-¶"><a href="#可选项-¶" class="headerlink" title="可选项 ¶"></a>可选项 ¶</h3><p>封装协议摘要<br>|属性                       |    支持<br>|-                          |-<br>|受限于 allow_url_fopen        |No<br>|受限于 allow_url_include   |No<br>|允许读取                    |No<br>|允许写入                    |No<br>|允许附加                    |No<br>|允许同时读写               |No<br>|支持 stat()                |No<br>|支持 unlink()              |No<br>|支持 rename()              |No<br>|支持 mkdir()               |No<br>|支持 rmdir()               |No</p>
@@ -626,90 +822,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/02/php支持的协议/glob协议/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-php支持的协议/http&amp;https协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="http"><a href="#http" class="headerlink" title="http://"></a>http://</h4><h4 id="https"><a href="#https" class="headerlink" title="https://"></a>https://</h4><p>http:// – https:// — 访问 HTTP(s) 网址   </p>
-<h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><hr>
-<p>允许通过 HTTP1.0的GET方法，以只读访问文件或资源。<br>HTTP 请求会附带一个Host:头，用于兼容基于域名的虚拟主机。<br>如果在你的php.ini文件中或字节流上下文（context）配置了user_agent字符串，它也会被包含在请求之中。<br>数据流允许读取资源的 body，而 headers 则储存在了 <figure class="highlight plain"><figcaption><span>变量里。  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">如果需要知道文档资源来自哪个URL（经过所有重定向的处理后），需要处理数据流返回的系列响应报头（```response headers```）。</div><div class="line"></div><div class="line">The from directive will be used for the From: header if set and not overwritten by the 上下文（Context）选项和参数.</div><div class="line"></div><div class="line">##### 用法</div><div class="line">---</div><div class="line">```http://example.com</div><div class="line">http://example.com/file.php?var1=val1&amp;var2=val2</div><div class="line">http://user:password@example.com</div><div class="line">https://example.com</div><div class="line">https://example.com/file.php?var1=val1&amp;var2=val2</div><div class="line">https://user:password@example.com</div></pre></td></tr></table></figure></p>
-<h5 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h5><hr>
-<p>封装协议概要<br>|属性                   |    支持<br>|-                      |-<br>|受 allow_url_fopen 限制|Yes<br>|允许读取                |Yes<br>|允许写入               |No<br>|允许添加               |No<br>|允许同时读和写         |N/A<br>|支持 stat()            |No<br>|支持 unlink()          |No<br>|支持 rename()          |No<br>|支持 mkdir()           |No<br>|支持 rmdir()           |No</p>
-<h5 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h5><hr>
-<table>
-<thead>
-<tr>
-<th>版本</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4.3.7</td>
-<td>检测 IIS 服务器避免 “SSL: Fatal Protocol Error” 错误。</td>
-</tr>
-<tr>
-<td>4.3.0</td>
-<td>添加 https://。</td>
-</tr>
-<tr>
-<td>4.0.5</td>
-<td>增加了对重定向的支持。</td>
-</tr>
-</tbody>
-</table>
-<h5 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h5><hr>
-<h6 id="Example-1-检测重定向后最终的-URL"><a href="#Example-1-检测重定向后最终的-URL" class="headerlink" title="Example #1 检测重定向后最终的 URL"></a>Example #1 检测重定向后最终的 URL</h6><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$url = &apos;http://www.example.com/redirecting_page.php&apos;;</div><div class="line"></div><div class="line">$fp = fopen($url, &apos;r&apos;);</div><div class="line"></div><div class="line">$meta_data = stream_get_meta_data($fp);</div><div class="line">foreach ($meta_data[&apos;wrapper_data&apos;] as $response) &#123;</div><div class="line"></div><div class="line">    /* 我们是否被重定向了？ */</div><div class="line">    if (strtolower(substr($response, 0, 10)) == &apos;location: &apos;) &#123;</div><div class="line"></div><div class="line">        /* 更新我们被重定向后的 $url */</div><div class="line">        $url = substr($response, 10);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><hr>
-<p><code>Note</code>:<code>openssl</code>扩展启用后才能够支持 HTTPS 协议。<br><code>HTTP</code> 连接是只读的;<br>还不支持对一个<code>HTTP</code>资源进行写数据或者复制文件。<br>比如发送<code>POST</code>和<code>PUT</code>请求，可以在 <code>HTTP Contexts</code> 的支持下实现。</p>
-<h5 id="参见"><a href="#参见" class="headerlink" title="参见"></a>参见</h5><hr>
-<p>HTTP context 选项<br><code>$http_response_header</code><br><code>stream_get_meta_data()</code>-从封装协议文件指针中取得报头／元数据  </p>
-<h5 id="User-Contributed-Notes"><a href="#User-Contributed-Notes" class="headerlink" title="User Contributed Notes"></a>User Contributed Notes</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">function post_it($datastream, $url) &#123; </div><div class="line"></div><div class="line">$url = preg_replace(&quot;@^http://@i&quot;, &quot;&quot;, $url);</div><div class="line">$host = substr($url, 0, strpos($url, &quot;/&quot;));</div><div class="line">$uri = strstr($url, &quot;/&quot;); </div><div class="line"></div><div class="line">      $reqbody = &quot;&quot;;</div><div class="line">      foreach($datastream as $key=&gt;$val) &#123;</div><div class="line">          if (!empty($reqbody)) $reqbody.= &quot;&amp;&quot;;</div><div class="line">      $reqbody.= $key.&quot;=&quot;.urlencode($val);</div><div class="line">      &#125; </div><div class="line"></div><div class="line">$contentlength = strlen($reqbody);</div><div class="line">     $reqheader =  &quot;POST $uri HTTP/1.1\r\n&quot;.</div><div class="line">                   &quot;Host: $host\n&quot;. &quot;User-Agent: PostIt\r\n&quot;.</div><div class="line">     &quot;Content-Type: application/x-www-form-urlencoded\r\n&quot;.</div><div class="line">     &quot;Content-Length: $contentlength\r\n\r\n&quot;.</div><div class="line">     &quot;$reqbody\r\n&quot;; </div><div class="line"></div><div class="line">$socket = fsockopen($host, 80, $errno, $errstr);</div><div class="line"></div><div class="line">if (!$socket) &#123;</div><div class="line">   $result[&quot;errno&quot;] = $errno;</div><div class="line">   $result[&quot;errstr&quot;] = $errstr;</div><div class="line">   return $result;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fputs($socket, $reqheader);</div><div class="line"></div><div class="line">while (!feof($socket)) &#123;</div><div class="line">   $result[] = fgets($socket, 4096);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fclose($socket);</div><div class="line"></div><div class="line">return $result;</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<p>Passing authentication information in the URL as in “<a href="https://user:password@example.com" target="_blank" rel="external">https://user:password@example.com</a>“ works for HTTP “Basic” access authentication but not for HTTP “Digest” access authentication. You can use the cURL functions for servers requesting HTTP “Digest” access authentication.<br>“The stream allows access to the body of the resource; the headers are stored in the $http_response_header variable. Since PHP 4.3.0, the headers are available using stream_get_meta_data().”<br>This one sentence is the only documentation I have found on the mysterious $http_response_header variable, and I’m afraid it’s misleading.  It implies that from 4.3.0 onward, stream_get_meta_data() ought to be used in favor of $http_response_header.<br>Don’t be fooled!  stream_get_meta_data() requires a stream reference, which makes it ONLY useful with fopen() and related functions.  However, $http_response_header can be used to get the headers from the much simpler file_get_contents() and related functions, which makes it still very useful in 5.x.<br>Also note that even when file_get_contents() and friends fail due to a 4xx or 5xx error and return false, the headers are still available in $http_response_header.<br>If you want to send more than one custom header, just make header an array:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$default_opts = array(</div><div class="line">    &apos;http&apos; =&gt; array(</div><div class="line">        &apos;user_agent&apos; =&gt; &apos;Foobar&apos;,</div><div class="line">        &apos;header&apos; =&gt; array(</div><div class="line">            &apos;X-Foo: Bar&apos;,</div><div class="line">            &apos;X-Bar: Baz&apos;</div><div class="line">        )</div><div class="line">    )</div><div class="line">);</div><div class="line">stream_context_get_default($default_opts);</div><div class="line">readfile(&apos;http://www.xhaus.com/headers&apos;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/php支持的协议/http&https协议/">show all >></a>
         </p>
       
 
