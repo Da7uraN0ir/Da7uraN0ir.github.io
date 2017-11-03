@@ -149,6 +149,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-something-interesting/myfound" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/31/something-interesting/myfound/">something interesting</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/31/something-interesting/myfound/" class="archive-article-date">
+  	<time datetime="2017-10-31T13:06:42.868Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--markdown-->
+<h1 id="最近发现一个奇技淫巧"><a href="#最近发现一个奇技淫巧" class="headerlink" title="最近发现一个奇技淫巧"></a>最近发现一个奇技淫巧</h1><p>在一次写shell的时候一时手残，就找到一个我感觉有那么一点点用的东西。<br><img src="http://i.imgur.com/3DBnyZm.png" alt=""><br>就是这个分号引起了报错，让我们大致能猜到他的文件结构。  </p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>开始我以为是php传入时分号的解析短句问题<br>但是这里是打了引号的，所以和php无关<br>然后想是不是插入数据库查询的时候出现了问题<br>会不会是分句执行什么的，但是，报错里面也有分号<br>说明这个分号是不影响sql语句执行的  </p>
+<h3 id="实验1"><a href="#实验1" class="headerlink" title="实验1"></a>实验1</h3><p>最后我把目光转移到了这个报错上面，很明显这个报错信息很像是文件夹名的问题，那如果这样我们可以试试</p>
+<blockquote>
+<p>/\:*?”&lt;&gt;  </p>
+</blockquote>
+<p>这些字符<br><img src="http://i.imgur.com/u4qJz3F.png" alt=""><br>斜杠测试成功，但是并不能爆出路径<br><img src="http://i.imgur.com/rW6Dznj.png" alt=""><br>分号反斜杠，这可以说把分号当成了文件名，果然成功爆出路径<br><img src="http://i.imgur.com/gbvWI44.png" alt=""><br>单独插入分号当成一个文件名是可以的<br><img src="http://i.imgur.com/De0lVYB.png" alt=""><br>当然？会让路由误会，所以也不能当文件名<br><img src="http://i.imgur.com/1n7Oxbw.png" alt=""><br>看下这些实验，得出结论，是文件或文件夹名非法导致报错  </p>
+<h3 id="实验2"><a href="#实验2" class="headerlink" title="实验2"></a>实验2</h3><p><img src="http://i.imgur.com/KwQnzNO.jpg" alt=""><br>果然这样会使文件名非法而报错（windows）<br><img src="http://i.imgur.com/4Uemc8i.png" alt=""><br>linux下可以接受这些字符  </p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>如上，写shell的时候能反馈你信息且为windows的时候。  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">interesting</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/31/something-interesting/myfound/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SQLi/bypasswaf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -567,15 +650,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,11 +662,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">interesting</a>
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">interesting</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,6 +683,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">密码学</a>
               </li>
             
             <div class="clearfix"></div>

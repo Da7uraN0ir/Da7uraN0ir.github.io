@@ -149,6 +149,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-php支持的协议/glob协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/glob协议/">glob协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/glob协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.063Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--markdown-->
+<h3 id="glob"><a href="#glob" class="headerlink" title="glob://"></a>glob://</h3><p>glob:// — 查找匹配的文件路径模式</p>
+<h3 id="说明-¶"><a href="#说明-¶" class="headerlink" title="说明 ¶"></a>说明 ¶</h3><p>glob: 数据流包装器自 PHP 5.3.0 起开始有效。</p>
+<h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>glob://</p>
+<h3 id="可选项-¶"><a href="#可选项-¶" class="headerlink" title="可选项 ¶"></a>可选项 ¶</h3><p>封装协议摘要<br>|属性                       |    支持<br>|-                          |-<br>|受限于 allow_url_fopen        |No<br>|受限于 allow_url_include   |No<br>|允许读取                    |No<br>|允许写入                    |No<br>|允许附加                    |No<br>|允许同时读写               |No<br>|支持 stat()                |No<br>|支持 unlink()              |No<br>|支持 rename()              |No<br>|支持 mkdir()               |No<br>|支持 rmdir()               |No</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// 循环 ext/spl/examples/ 目录里所有 *.php 文件</div><div class="line">// 并打印文件名和文件尺寸</div><div class="line">$it = new DirectoryIterator(&quot;glob://ext/spl/examples/*.php&quot;);</div><div class="line">foreach($it as $f) &#123;</div><div class="line">    printf(&quot;%s: %.1FK\n&quot;, $f-&gt;getFilename(), $f-&gt;getSize()/1024);</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>result:<br>tree.php: 1.0K<br>findregex.php: 0.6K<br>findfile.php: 0.7K<br>dba_dump.php: 0.9K<br>nocvsdir.php: 1.1K<br>phar_from_dir.php: 1.0K<br>ini_groups.php: 0.9K<br>directorytree.php: 0.9K<br>dba_array.php: 1.1K<br>class_tree.php: 1.8K  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php支持的协议</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/php支持的协议/glob协议/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-php支持的协议/http&amp;https协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1372,89 +1452,6 @@
 
 
   
-    <article id="post-something-interesting/myfound" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/something-interesting/myfound/">something interesting</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/something-interesting/myfound/" class="archive-article-date">
-  	<time datetime="2017-10-31T13:06:42.868Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!--markdown-->
-<h1 id="最近发现一个奇技淫巧"><a href="#最近发现一个奇技淫巧" class="headerlink" title="最近发现一个奇技淫巧"></a>最近发现一个奇技淫巧</h1><p>在一次写shell的时候一时手残，就找到一个我感觉有那么一点点用的东西。<br><img src="http://i.imgur.com/3DBnyZm.png" alt=""><br>就是这个分号引起了报错，让我们大致能猜到他的文件结构。  </p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>开始我以为是php传入时分号的解析短句问题<br>但是这里是打了引号的，所以和php无关<br>然后想是不是插入数据库查询的时候出现了问题<br>会不会是分句执行什么的，但是，报错里面也有分号<br>说明这个分号是不影响sql语句执行的  </p>
-<h3 id="实验1"><a href="#实验1" class="headerlink" title="实验1"></a>实验1</h3><p>最后我把目光转移到了这个报错上面，很明显这个报错信息很像是文件夹名的问题，那如果这样我们可以试试</p>
-<blockquote>
-<p>/\:*?”&lt;&gt;  </p>
-</blockquote>
-<p>这些字符<br><img src="http://i.imgur.com/u4qJz3F.png" alt=""><br>斜杠测试成功，但是并不能爆出路径<br><img src="http://i.imgur.com/rW6Dznj.png" alt=""><br>分号反斜杠，这可以说把分号当成了文件名，果然成功爆出路径<br><img src="http://i.imgur.com/gbvWI44.png" alt=""><br>单独插入分号当成一个文件名是可以的<br><img src="http://i.imgur.com/De0lVYB.png" alt=""><br>当然？会让路由误会，所以也不能当文件名<br><img src="http://i.imgur.com/1n7Oxbw.png" alt=""><br>看下这些实验，得出结论，是文件或文件夹名非法导致报错  </p>
-<h3 id="实验2"><a href="#实验2" class="headerlink" title="实验2"></a>实验2</h3><p><img src="http://i.imgur.com/KwQnzNO.jpg" alt=""><br>果然这样会使文件名非法而报错（windows）<br><img src="http://i.imgur.com/4Uemc8i.png" alt=""><br>linux下可以接受这些字符  </p>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>如上，写shell的时候能反馈你信息且为windows的时候。  </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">interesting</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/something-interesting/myfound/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1556,15 +1553,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1572,11 +1565,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">interesting</a>
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">interesting</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1589,6 +1586,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">密码学</a>
               </li>
             
             <div class="clearfix"></div>
