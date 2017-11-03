@@ -6,11 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Da7ura_n0ir</title>
+  <title>MD5扩展攻击 | Da7ura_n0ir</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="起因一道ctf题12345678910111213141516171819202122232425262728293031$flag = &amp;quot;XXXXXXXXXXXXXXXXXXXXXXX&amp;quot;;$secret = &amp;quot;XXXXXXXXXXXXXXX&amp;quot;; // This secret is 15 characters long for security!$usern">
+<meta name="keywords" content="密码学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Da7ura_n0ir">
+<meta property="og:title" content="MD5扩展攻击">
 <meta property="og:url" content="http://yoursite.com/2017/11/03/密码学/MD5扩展攻击/index.html">
 <meta property="og:site_name" content="Da7ura_n0ir">
 <meta property="og:description" content="起因一道ctf题12345678910111213141516171819202122232425262728293031$flag = &amp;quot;XXXXXXXXXXXXXXXXXXXXXXX&amp;quot;;$secret = &amp;quot;XXXXXXXXXXXXXXX&amp;quot;; // This secret is 15 characters long for security!$usern">
@@ -18,9 +19,9 @@
 <meta property="og:image" content="http://yoursite.com/img/1.png">
 <meta property="og:image" content="http://yoursite.com/img/2.png">
 <meta property="og:image" content="http://yoursite.com/img/4.png">
-<meta property="og:updated_time" content="2017-11-03T05:19:00.599Z">
+<meta property="og:updated_time" content="2017-11-03T05:32:08.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Da7ura_n0ir">
+<meta name="twitter:title" content="MD5扩展攻击">
 <meta name="twitter:description" content="起因一道ctf题12345678910111213141516171819202122232425262728293031$flag = &amp;quot;XXXXXXXXXXXXXXXXXXXXXXX&amp;quot;;$secret = &amp;quot;XXXXXXXXXXXXXXX&amp;quot;; // This secret is 15 characters long for security!$usern">
 <meta name="twitter:image" content="http://yoursite.com/img/1.png">
   
@@ -155,6 +156,21 @@
             <article id="post-密码学/MD5扩展攻击" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MD5扩展攻击
+    </h1>
+  
+
+        
+        <a href="/2017/11/03/密码学/MD5扩展攻击/" class="archive-article-date">
+  	<time datetime="2017-11-03T04:25:20.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-03</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>一道ctf题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">$flag = &quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;;</div><div class="line">$secret = &quot;XXXXXXXXXXXXXXX&quot;; // This secret is 15 characters long for security!</div><div class="line"></div><div class="line">$username = $_POST[&quot;username&quot;];</div><div class="line">$password = $_POST[&quot;password&quot;];</div><div class="line"></div><div class="line">if (!empty($_COOKIE[&quot;getmein&quot;])) &#123;</div><div class="line">    if (urldecode($username) === &quot;admin&quot; &amp;&amp; urldecode($password) != &quot;admin&quot;) &#123;</div><div class="line">        if ($COOKIE[&quot;getmein&quot;] === md5($secret . urldecode($username . $password))) &#123;</div><div class="line">            echo &quot;Congratulations! You are a registered user.\n&quot;;</div><div class="line">            die (&quot;The flag is &quot;. $flag);</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            die (&quot;Your cookies don&apos;t match up! STOP HACKING THIS SITE.&quot;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        die (&quot;You are not an admin! LEAVE.&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">setcookie(&quot;sample-hash&quot;, md5($secret . urldecode(&quot;admin&quot; . &quot;admin&quot;)), time() + (60 * 60 * 24 * 7));</div><div class="line"></div><div class="line">if (empty($_COOKIE[&quot;source&quot;])) &#123;</div><div class="line">    setcookie(&quot;source&quot;, 0, time() + (60 * 60 * 24 * 7));</div><div class="line">&#125;</div><div class="line">else &#123;</div><div class="line">    if ($_COOKIE[&quot;source&quot;] != 0) &#123;</div><div class="line">        echo &quot;&quot;; // This source code is outputted here</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -191,6 +207,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">密码学</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
