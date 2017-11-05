@@ -302,19 +302,19 @@
 
 
   
-    <article id="post-python/多进程爆破cet4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python/md5截断字符串爆破" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/python/多进程爆破cet4/">多线程爆破cet4准考号</a>
+      <a class="article-title" href="/2017/11/02/python/md5截断字符串爆破/">md5截断字符串比较爆破</a>
     </h1>
   
 
         
-        <a href="/2017/11/02/python/多进程爆破cet4/" class="archive-article-date">
+        <a href="/2017/11/02/python/md5截断字符串爆破/" class="archive-article-date">
   	<time datetime="2017-11-02T02:57:53.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
 </a>
         
@@ -322,20 +322,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line">import requests</div><div class="line">from multiprocessing import Pool</div><div class="line">tit=&apos;听&apos;.decode(&apos;utf-8&apos;)</div><div class="line">def ck(url):</div><div class="line">    url1=&apos;http://www.chsi.com.cn/cet/query?zkzh=5100601711&apos;+str(url)+&apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re1 = requests.get(url1)</div><div class="line">    try:</div><div class="line">        if tit in re1.text:</div><div class="line">            print &apos;find:5100601711&apos;+str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100601711&apos;+str(url)+&apos;失败&apos;</div><div class="line">    except ZeroDivisionError, e:</div><div class="line">        print e.message</div><div class="line">    url2 = &apos;http://www.chsi.com.cn/cet/query?zkzh=5100611711&apos; + str(url) + &apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re2 = requests.get(url2)</div><div class="line">    try:</div><div class="line">        if tit in re2.text:</div><div class="line">            print &apos;find:5100611711&apos; + str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100611711&apos; + str(url) + &apos;失败&apos;</div><div class="line">    except ConnectionError, e:</div><div class="line">        print e.message</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    pool=Pool(100)</div><div class="line">    f = open(&apos;G:\/1234.txt&apos;)</div><div class="line">    list = []</div><div class="line">    for line in f.readlines():</div><div class="line">        line = line.strip(&apos;\n&apos;)</div><div class="line">        list.append(line)</div><div class="line">    pool.map(ck,list)</div><div class="line">    pool.close()</div><div class="line">    pool.join()</div><div class="line"># u=&apos;http://www.chsi.com.cn/cet/query&apos;</div><div class="line"># tit=&apos;听力&apos;.decode(&apos;utf-8&apos;)</div><div class="line"># for a in range(0,10):</div><div class="line">#     for b in range(0, 10):</div><div class="line">#         for c in range(0, 10):</div><div class="line">#             for d in range(0, 10):</div><div class="line">#                 for e in range(0, 10):</div><div class="line">#                     get=&apos;?zkzh=5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;&amp;xm=左松林&apos;</div><div class="line">#                     url=u+get</div><div class="line">#                     re=requests.get(url)</div><div class="line">#                     try:</div><div class="line">#                         if tit in re.text:</div><div class="line">#                             print &apos;find:5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)</div><div class="line">#                         else:</div><div class="line">#                             print &apos;5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;失败&apos;</div><div class="line">#                     except ZeroDivisionError, e:</div><div class="line">#                         print e.message</div></pre></td></tr></table></figure>
-<p>from multiprocessing import Pool<br>进程池<br>multiprocessing模块<br>看一下Process类的构造方法：<br><code>__init__(self, group=None, target=None, name=None, args=(), kwargs={})</code><br>参数说明：<br>group：进程所属组。基本不用<br>target：表示调用对象。<br>args：表示调用对象的位置参数元组。<br>name：别名<br>kwargs：表示调用对象的字典。<br>创建进程的简单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">import multiprocessing</div><div class="line"></div><div class="line">def do(n) :</div><div class="line">  #获取当前线程的名字</div><div class="line">  name = multiprocessing.current_process().name</div><div class="line">  print name,&apos;starting&apos;</div><div class="line">  print &quot;worker &quot;, n</div><div class="line">  return</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos; :</div><div class="line">  numList = []</div><div class="line">  for i in xrange(5) :</div><div class="line">    p = multiprocessing.Process(target=do, args=(i,))</div><div class="line">    numList.append(p)</div><div class="line">    p.start()</div><div class="line">    p.join()</div><div class="line">    print &quot;Process end.&quot;</div></pre></td></tr></table></figure></p>
-<p>执行结果：<br>Process-1 starting<br>worker  0<br>Process end.<br>Process-2 starting<br>worker  1<br>Process end.<br>Process-3 starting<br>worker  2<br>Process end.<br>Process-4 starting<br>worker  3<br>Process end.<br>Process-5 starting<br>worker  4<br>Process end.<br>创建子进程时，只需要传入一个执行函数和函数的参数，创建一个Process实例，并用其start()方法启动，这样创建进程比fork()还要简单。<br>join()方法表示等待子进程结束以后再继续往下运行，通常用于进程间的同步。<br>注意：<br>在Windows上要想使用进程模块，就必须把有关进程的代码写在当前.py文件的<code>if __name__ == ‘__main__’</code> :语句的下面，才能正常使用<code>Windows</code>下的进程模块。<code>Unix/Linux</code>下则不需要。  </p>
-<h3 id="Pool类"><a href="#Pool类" class="headerlink" title="Pool类"></a>Pool类</h3><p>在使用Python进行系统管理时，特别是同时操作多个文件目录或者远程控制多台主机，并行操作可以节约大量的时间。如果操作的对象数目不大时，还可以直接使用Process类动态的生成多个进程，十几个还好，但是如果上百个甚至更多，那手动去限制进程数量就显得特别的繁琐，此时进程池就派上用场了。<br>Pool类可以提供指定数量的进程供用户调用，当有新的请求提交到Pool中时，如果池还没有满，就会创建一个新的进程来执行请求。如果池满，请求就会告知先等待，直到池中有进程结束，才会创建新的进程来执行这些请求<br>下面介绍一下<code>multiprocessing</code>   模块下的Pool类下的几个方法  </p>
-<h4 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h4><p>函数原型：<br><code>apply(func[, args=()[, kwds={}]])</code><br>该函数用于传递不定参数，主进程会被阻塞直到函数执行结束（不建议使用，并且3.x以后不在出现）。</p>
-<h4 id="apply-async"><a href="#apply-async" class="headerlink" title="apply_async()"></a>apply_async()</h4><p>函数原型：</p>
-<p><code>apply_async(func[, args=()[, kwds={}[, callback=None]]])</code></p>
-<p>与apply用法一样，但它是非阻塞且支持结果返回进行回调。</p>
-<h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><p>函数原型：</p>
-<p><code>map(func, iterable[, chunksize=None])</code></p>
-<p>Pool类中的map方法，与内置的map函数用法行为基本一致，它会使进程阻塞直到返回结果。<br>注意，虽然第二个参数是一个迭代器，但在实际使用中，必须在整个队列都就绪后，程序才会运行子进程。</p>
-<h4 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h4><p>关闭进程池（pool），使其不在接受新的任务。</p>
-<h4 id="terminate"><a href="#terminate" class="headerlink" title="terminate()"></a>terminate()</h4><p>结束工作进程，不再处理未处理的任务。</p>
-<h4 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h4><p>主进程阻塞等待子进程的退出，join方法必须在close或terminate之后使用。<br>multiprocessing.Pool类的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">from multiprocessing import Pool</div><div class="line">def run(fn):</div><div class="line">  #fn: 函数参数是数据列表的一个元素</div><div class="line">  time.sleep(1)</div><div class="line">  return fn*fn</div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">  testFL = [1,2,3,4,5,6]  </div><div class="line">  print &apos;shunxu:&apos; #顺序执行(也就是串行执行，单进程)</div><div class="line">  s = time.time()</div><div class="line">  for fn in testFL:</div><div class="line">    run(fn)</div><div class="line"></div><div class="line">  e1 = time.time()</div><div class="line">  print &quot;顺序执行时间：&quot;, int(e1 - s)</div><div class="line"></div><div class="line">  print &apos;concurrent:&apos; #创建多个进程，并行执行</div><div class="line">  pool = Pool(5)  #创建拥有5个进程数量的进程池</div><div class="line">  #testFL:要处理的数据列表，run：处理testFL列表中数据的函数</div><div class="line">  rl =pool.map(run, testFL)</div><div class="line">  pool.close()#关闭进程池，不再接受新的进程</div><div class="line">  pool.join()#主进程阻塞等待子进程的退出</div><div class="line">  e2 = time.time()</div><div class="line">  print &quot;并行执行时间：&quot;, int(e2-e1)</div><div class="line">  print rl</div></pre></td></tr></table></figure></p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import hashlib</div><div class="line">import re</div><div class="line">a = 1</div><div class="line">while a &lt; 999999:</div><div class="line">    md5 = hashlib.md5((str(a) + &apos;D0g3&apos;).encode()).hexdigest()</div><div class="line">    if re.match(&apos;^0e\d&#123;8&#125;&apos;, md5[2:]):</div><div class="line">        print(str(a) + &quot; &quot; + md5 + &quot;\n&quot;)</div><div class="line">        a += 1</div><div class="line">        continue</div><div class="line">    a += 1</div></pre></td></tr></table></figure>
+<p>md5爆破<br>弱类型</p>
 
       
 
@@ -359,7 +347,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/python/多进程爆破cet4/">show all >></a>
+          <a class="article-more-a" href="/2017/11/02/python/md5截断字符串爆破/">show all >></a>
         </p>
       
 
@@ -463,19 +451,19 @@
 
 
   
-    <article id="post-python/md5截断字符串爆破" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python/多进程爆破cet4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/python/md5截断字符串爆破/">md5截断字符串比较爆破</a>
+      <a class="article-title" href="/2017/11/02/python/多进程爆破cet4/">多线程爆破cet4准考号</a>
     </h1>
   
 
         
-        <a href="/2017/11/02/python/md5截断字符串爆破/" class="archive-article-date">
+        <a href="/2017/11/02/python/多进程爆破cet4/" class="archive-article-date">
   	<time datetime="2017-11-02T02:57:53.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
 </a>
         
@@ -483,8 +471,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import hashlib</div><div class="line">import re</div><div class="line">a = 1</div><div class="line">while a &lt; 999999:</div><div class="line">    md5 = hashlib.md5((str(a) + &apos;D0g3&apos;).encode()).hexdigest()</div><div class="line">    if re.match(&apos;^0e\d&#123;8&#125;&apos;, md5[2:]):</div><div class="line">        print(str(a) + &quot; &quot; + md5 + &quot;\n&quot;)</div><div class="line">        a += 1</div><div class="line">        continue</div><div class="line">    a += 1</div></pre></td></tr></table></figure>
-<p>md5爆破<br>弱类型</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line">import requests</div><div class="line">from multiprocessing import Pool</div><div class="line">tit=&apos;听&apos;.decode(&apos;utf-8&apos;)</div><div class="line">def ck(url):</div><div class="line">    url1=&apos;http://www.chsi.com.cn/cet/query?zkzh=5100601711&apos;+str(url)+&apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re1 = requests.get(url1)</div><div class="line">    try:</div><div class="line">        if tit in re1.text:</div><div class="line">            print &apos;find:5100601711&apos;+str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100601711&apos;+str(url)+&apos;失败&apos;</div><div class="line">    except ZeroDivisionError, e:</div><div class="line">        print e.message</div><div class="line">    url2 = &apos;http://www.chsi.com.cn/cet/query?zkzh=5100611711&apos; + str(url) + &apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re2 = requests.get(url2)</div><div class="line">    try:</div><div class="line">        if tit in re2.text:</div><div class="line">            print &apos;find:5100611711&apos; + str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100611711&apos; + str(url) + &apos;失败&apos;</div><div class="line">    except ConnectionError, e:</div><div class="line">        print e.message</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    pool=Pool(100)</div><div class="line">    f = open(&apos;G:\/1234.txt&apos;)</div><div class="line">    list = []</div><div class="line">    for line in f.readlines():</div><div class="line">        line = line.strip(&apos;\n&apos;)</div><div class="line">        list.append(line)</div><div class="line">    pool.map(ck,list)</div><div class="line">    pool.close()</div><div class="line">    pool.join()</div><div class="line"># u=&apos;http://www.chsi.com.cn/cet/query&apos;</div><div class="line"># tit=&apos;听力&apos;.decode(&apos;utf-8&apos;)</div><div class="line"># for a in range(0,10):</div><div class="line">#     for b in range(0, 10):</div><div class="line">#         for c in range(0, 10):</div><div class="line">#             for d in range(0, 10):</div><div class="line">#                 for e in range(0, 10):</div><div class="line">#                     get=&apos;?zkzh=5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;&amp;xm=左松林&apos;</div><div class="line">#                     url=u+get</div><div class="line">#                     re=requests.get(url)</div><div class="line">#                     try:</div><div class="line">#                         if tit in re.text:</div><div class="line">#                             print &apos;find:5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)</div><div class="line">#                         else:</div><div class="line">#                             print &apos;5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;失败&apos;</div><div class="line">#                     except ZeroDivisionError, e:</div><div class="line">#                         print e.message</div></pre></td></tr></table></figure>
+<p>from multiprocessing import Pool<br>进程池<br>multiprocessing模块<br>看一下Process类的构造方法：<br><code>__init__(self, group=None, target=None, name=None, args=(), kwargs={})</code><br>参数说明：<br>group：进程所属组。基本不用<br>target：表示调用对象。<br>args：表示调用对象的位置参数元组。<br>name：别名<br>kwargs：表示调用对象的字典。<br>创建进程的简单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">import multiprocessing</div><div class="line"></div><div class="line">def do(n) :</div><div class="line">  #获取当前线程的名字</div><div class="line">  name = multiprocessing.current_process().name</div><div class="line">  print name,&apos;starting&apos;</div><div class="line">  print &quot;worker &quot;, n</div><div class="line">  return</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos; :</div><div class="line">  numList = []</div><div class="line">  for i in xrange(5) :</div><div class="line">    p = multiprocessing.Process(target=do, args=(i,))</div><div class="line">    numList.append(p)</div><div class="line">    p.start()</div><div class="line">    p.join()</div><div class="line">    print &quot;Process end.&quot;</div></pre></td></tr></table></figure></p>
+<p>执行结果：<br>Process-1 starting<br>worker  0<br>Process end.<br>Process-2 starting<br>worker  1<br>Process end.<br>Process-3 starting<br>worker  2<br>Process end.<br>Process-4 starting<br>worker  3<br>Process end.<br>Process-5 starting<br>worker  4<br>Process end.<br>创建子进程时，只需要传入一个执行函数和函数的参数，创建一个Process实例，并用其start()方法启动，这样创建进程比fork()还要简单。<br>join()方法表示等待子进程结束以后再继续往下运行，通常用于进程间的同步。<br>注意：<br>在Windows上要想使用进程模块，就必须把有关进程的代码写在当前.py文件的<code>if __name__ == ‘__main__’</code> :语句的下面，才能正常使用<code>Windows</code>下的进程模块。<code>Unix/Linux</code>下则不需要。  </p>
+<h3 id="Pool类"><a href="#Pool类" class="headerlink" title="Pool类"></a>Pool类</h3><p>在使用Python进行系统管理时，特别是同时操作多个文件目录或者远程控制多台主机，并行操作可以节约大量的时间。如果操作的对象数目不大时，还可以直接使用Process类动态的生成多个进程，十几个还好，但是如果上百个甚至更多，那手动去限制进程数量就显得特别的繁琐，此时进程池就派上用场了。<br>Pool类可以提供指定数量的进程供用户调用，当有新的请求提交到Pool中时，如果池还没有满，就会创建一个新的进程来执行请求。如果池满，请求就会告知先等待，直到池中有进程结束，才会创建新的进程来执行这些请求<br>下面介绍一下<code>multiprocessing</code>   模块下的Pool类下的几个方法  </p>
+<h4 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h4><p>函数原型：<br><code>apply(func[, args=()[, kwds={}]])</code><br>该函数用于传递不定参数，主进程会被阻塞直到函数执行结束（不建议使用，并且3.x以后不在出现）。</p>
+<h4 id="apply-async"><a href="#apply-async" class="headerlink" title="apply_async()"></a>apply_async()</h4><p>函数原型：</p>
+<p><code>apply_async(func[, args=()[, kwds={}[, callback=None]]])</code></p>
+<p>与apply用法一样，但它是非阻塞且支持结果返回进行回调。</p>
+<h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><p>函数原型：</p>
+<p><code>map(func, iterable[, chunksize=None])</code></p>
+<p>Pool类中的map方法，与内置的map函数用法行为基本一致，它会使进程阻塞直到返回结果。<br>注意，虽然第二个参数是一个迭代器，但在实际使用中，必须在整个队列都就绪后，程序才会运行子进程。</p>
+<h4 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h4><p>关闭进程池（pool），使其不在接受新的任务。</p>
+<h4 id="terminate"><a href="#terminate" class="headerlink" title="terminate()"></a>terminate()</h4><p>结束工作进程，不再处理未处理的任务。</p>
+<h4 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h4><p>主进程阻塞等待子进程的退出，join方法必须在close或terminate之后使用。<br>multiprocessing.Pool类的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">from multiprocessing import Pool</div><div class="line">def run(fn):</div><div class="line">  #fn: 函数参数是数据列表的一个元素</div><div class="line">  time.sleep(1)</div><div class="line">  return fn*fn</div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">  testFL = [1,2,3,4,5,6]  </div><div class="line">  print &apos;shunxu:&apos; #顺序执行(也就是串行执行，单进程)</div><div class="line">  s = time.time()</div><div class="line">  for fn in testFL:</div><div class="line">    run(fn)</div><div class="line"></div><div class="line">  e1 = time.time()</div><div class="line">  print &quot;顺序执行时间：&quot;, int(e1 - s)</div><div class="line"></div><div class="line">  print &apos;concurrent:&apos; #创建多个进程，并行执行</div><div class="line">  pool = Pool(5)  #创建拥有5个进程数量的进程池</div><div class="line">  #testFL:要处理的数据列表，run：处理testFL列表中数据的函数</div><div class="line">  rl =pool.map(run, testFL)</div><div class="line">  pool.close()#关闭进程池，不再接受新的进程</div><div class="line">  pool.join()#主进程阻塞等待子进程的退出</div><div class="line">  e2 = time.time()</div><div class="line">  print &quot;并行执行时间：&quot;, int(e2-e1)</div><div class="line">  print rl</div></pre></td></tr></table></figure></p>
 
       
 
@@ -508,7 +508,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/python/md5截断字符串爆破/">show all >></a>
+          <a class="article-more-a" href="/2017/11/02/python/多进程爆破cet4/">show all >></a>
         </p>
       
 
@@ -1077,11 +1077,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1097,11 +1097,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">密码学</a>
+                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
+                <a href="javascript:void(0)" class="js-tag color4">密码学</a>
               </li>
              
               <li class="article-tag-list-item">
