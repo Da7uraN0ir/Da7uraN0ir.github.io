@@ -149,86 +149,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-php支持的协议/glob协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/php支持的协议/glob协议/">glob协议</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/02/php支持的协议/glob协议/" class="archive-article-date">
-  	<time datetime="2017-11-02T02:57:11.063Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!--markdown-->
-<h3 id="glob"><a href="#glob" class="headerlink" title="glob://"></a>glob://</h3><p>glob:// — 查找匹配的文件路径模式</p>
-<h3 id="说明-¶"><a href="#说明-¶" class="headerlink" title="说明 ¶"></a>说明 ¶</h3><p>glob: 数据流包装器自 PHP 5.3.0 起开始有效。</p>
-<h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>glob://</p>
-<h3 id="可选项-¶"><a href="#可选项-¶" class="headerlink" title="可选项 ¶"></a>可选项 ¶</h3><p>封装协议摘要<br>|属性                       |    支持<br>|-                          |-<br>|受限于 allow_url_fopen        |No<br>|受限于 allow_url_include   |No<br>|允许读取                    |No<br>|允许写入                    |No<br>|允许附加                    |No<br>|允许同时读写               |No<br>|支持 stat()                |No<br>|支持 unlink()              |No<br>|支持 rename()              |No<br>|支持 mkdir()               |No<br>|支持 rmdir()               |No</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// 循环 ext/spl/examples/ 目录里所有 *.php 文件</div><div class="line">// 并打印文件名和文件尺寸</div><div class="line">$it = new DirectoryIterator(&quot;glob://ext/spl/examples/*.php&quot;);</div><div class="line">foreach($it as $f) &#123;</div><div class="line">    printf(&quot;%s: %.1FK\n&quot;, $f-&gt;getFilename(), $f-&gt;getSize()/1024);</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<p>result:<br>tree.php: 1.0K<br>findregex.php: 0.6K<br>findfile.php: 0.7K<br>dba_dump.php: 0.9K<br>nocvsdir.php: 1.1K<br>phar_from_dir.php: 1.0K<br>ini_groups.php: 0.9K<br>directorytree.php: 0.9K<br>dba_array.php: 1.1K<br>class_tree.php: 1.8K  </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php支持的协议</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/php支持的协议/glob协议/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-php支持的协议/http&amp;https协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -311,6 +231,86 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/02/php支持的协议/http&https协议/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-php支持的协议/glob协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/php支持的协议/glob协议/">glob协议</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/php支持的协议/glob协议/" class="archive-article-date">
+  	<time datetime="2017-11-02T02:57:11.063Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--markdown-->
+<h3 id="glob"><a href="#glob" class="headerlink" title="glob://"></a>glob://</h3><p>glob:// — 查找匹配的文件路径模式</p>
+<h3 id="说明-¶"><a href="#说明-¶" class="headerlink" title="说明 ¶"></a>说明 ¶</h3><p>glob: 数据流包装器自 PHP 5.3.0 起开始有效。</p>
+<h3 id="用法-¶"><a href="#用法-¶" class="headerlink" title="用法 ¶"></a>用法 ¶</h3><p>glob://</p>
+<h3 id="可选项-¶"><a href="#可选项-¶" class="headerlink" title="可选项 ¶"></a>可选项 ¶</h3><p>封装协议摘要<br>|属性                       |    支持<br>|-                          |-<br>|受限于 allow_url_fopen        |No<br>|受限于 allow_url_include   |No<br>|允许读取                    |No<br>|允许写入                    |No<br>|允许附加                    |No<br>|允许同时读写               |No<br>|支持 stat()                |No<br>|支持 unlink()              |No<br>|支持 rename()              |No<br>|支持 mkdir()               |No<br>|支持 rmdir()               |No</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// 循环 ext/spl/examples/ 目录里所有 *.php 文件</div><div class="line">// 并打印文件名和文件尺寸</div><div class="line">$it = new DirectoryIterator(&quot;glob://ext/spl/examples/*.php&quot;);</div><div class="line">foreach($it as $f) &#123;</div><div class="line">    printf(&quot;%s: %.1FK\n&quot;, $f-&gt;getFilename(), $f-&gt;getSize()/1024);</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>result:<br>tree.php: 1.0K<br>findregex.php: 0.6K<br>findfile.php: 0.7K<br>dba_dump.php: 0.9K<br>nocvsdir.php: 1.1K<br>phar_from_dir.php: 1.0K<br>ini_groups.php: 0.9K<br>directorytree.php: 0.9K<br>dba_array.php: 1.1K<br>class_tree.php: 1.8K  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php支持的协议</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/php支持的协议/glob协议/">show all >></a>
         </p>
       
 
@@ -1561,11 +1561,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
+                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+                <a href="javascript:void(0)" class="js-tag color4">php支持的协议</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1581,11 +1581,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
+                <a href="javascript:void(0)" class="js-tag color4">密码学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">密码学</a>
+                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
               </li>
              
               <li class="article-tag-list-item">
