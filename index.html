@@ -149,6 +149,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-密码学/ecb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/08/密码学/ecb/">ecb</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/08/密码学/ecb/" class="archive-article-date">
+  	<time datetime="2017-11-08T07:14:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ECB加密"><a href="#ECB加密" class="headerlink" title="ECB加密"></a>ECB加密</h2><p>ECB模式的全称是Electronic CodeBook模式，将明文分组加密后直接成为密文分组，而密文则是由明文分组直接拼接而成。<br>加密模式如图:<br>!()[]<br>那就是</p>
+<ol>
+<li>分组</li>
+<li>分组加密</li>
+<li>密文组合<br>三步完成<br>既然如此，我们在已知一部分明文的密文的情况下，我们就可以知道任意明文的密文  <h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/**</div><div class="line"> * Created by PhpStorm.</div><div class="line"> * User: Da7ura_N0ir</div><div class="line"> * Date: 2017/11/8</div><div class="line"> * Time: 15:03</div><div class="line"> */</div><div class="line">function AES($data)&#123;// 要加密或解密的数据</div><div class="line">    $privateKey = &quot;12345678123456781234567812345678&quot;;</div><div class="line">    // 加密密钥// MCRYPT_RIJNDAEL_128-&gt;加密算法</div><div class="line">    $encrypted = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $privateKey, $data, MCRYPT_MODE_ECB);</div><div class="line">    // MCRYPT_MODE_ECB-&gt;加密或解密的模式</div><div class="line">    $encryptedData = (base64_encode($encrypted));</div><div class="line">    return $encryptedData;</div><div class="line">&#125;</div><div class="line">function DE__AES($data)&#123;</div><div class="line">    $privateKey = &quot;12345678123456781234567812345678&quot;;</div><div class="line">    $encryptedData = base64_decode($data);</div><div class="line">    $decrypted = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $privateKey, $encryptedData, MCRYPT_MODE_ECB);</div><div class="line">    $decrypted = rtrim($decrypted, &quot;\0&quot;) ;</div><div class="line">    return $decrypted;</div><div class="line">&#125;</div><div class="line">if (@$_GET[&apos;a&apos;]==&apos;reg&apos;)&#123;</div><div class="line">    setcookie(&apos;uid&apos;, AES(&apos;9&apos;));</div><div class="line">    setcookie(&apos;username&apos;, AES($_POST[&apos;username&apos;]));</div><div class="line">    header(&quot;Location: http://127.0.0.1/test/ecb.php&quot;);</div><div class="line">    exit();</div><div class="line">&#125;</div><div class="line">if (@!isset($_COOKIE[&apos;uid&apos;])||@!isset($_COOKIE[&apos;username&apos;]))&#123;</div><div class="line">    echo &apos;&lt;form method=&quot;post&quot; action=&quot;ecb.php?a=reg&quot;&gt;</div><div class="line">Username:&lt;br&gt;</div><div class="line">&lt;input type=&quot;text&quot;  name=&quot;username&quot;&gt;</div><div class="line">&lt;br&gt;</div><div class="line">Password:&lt;br&gt;</div><div class="line">&lt;input type=&quot;text&quot; name=&quot;password&quot; &gt;</div><div class="line">&lt;br&gt;&lt;br&gt;</div><div class="line">&lt;input type=&quot;submit&quot; value=&quot;注册&quot;&gt;</div><div class="line">&lt;/form&gt; &apos;;</div><div class="line">&#125;</div><div class="line">else&#123;</div><div class="line">    $uid = DE__AES($_COOKIE[&apos;uid&apos;]);</div><div class="line">    //echo &apos;uid=&apos;.$uid.&apos;&lt;br&gt;username=&apos;.$_COOKIE[&apos;username&apos;].&apos;&lt;br&gt;&apos;;</div><div class="line">    if ( $uid != &apos;4&apos;)&#123;</div><div class="line">        echo &apos;uid:&apos; .$uid .&apos;&lt;br/&gt;&apos;;</div><div class="line">        echo &apos;Hi &apos; . DE__AES($_COOKIE[&apos;username&apos;]) .&apos;&lt;br/&gt;&apos;;</div><div class="line">        echo &apos;You are not administrotor!!&apos;;</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        echo &quot;Hi you are administrotor!!&quot; .&apos;&lt;br/&gt;&apos;;</div><div class="line">        echo &apos;Flag is ****&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里我们在不知道秘钥<code>privateKey</code>的情况下，可以直接找到<code>4</code>的的加密密文<br>脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">import urllib</div><div class="line">import urllib2</div><div class="line">import base64</div><div class="line">import cookielib</div><div class="line">import Cookie</div><div class="line">for num in range(1,50):</div><div class="line">    reg_url=&apos;http://127.0.0.1/test/ecb.php?a=reg&apos;</div><div class="line">    index_url=&apos;http://127.0.0.1/test/ecb.php&apos;</div><div class="line">    cookie=cookielib.CookieJar()</div><div class="line">    opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))</div><div class="line">    opener.addheaders.append((&apos;User-Agent&apos;,&apos;Mozilla/5.0&apos;))</div><div class="line">    num=str(num)</div><div class="line">    values=&#123;&apos;username&apos;:&apos;aaaaaaaaaaaaaaaa&apos;+num,&apos;password&apos;:&apos;123&apos;&#125;</div><div class="line">    data=urllib.urlencode(values)</div><div class="line">    opener.open(reg_url,data)</div><div class="line">    text=opener.open(index_url,data)</div><div class="line">    for ck in cookie:</div><div class="line">        if ck.name==&apos;username&apos;:</div><div class="line">            user_name=ck.value</div><div class="line">    user_name = urllib.unquote(user_name)</div><div class="line">    user_name = base64.b64decode(user_name)</div><div class="line">    hex_name = user_name.encode(&apos;hex&apos;)</div><div class="line">    hex_name = hex_name[len(hex_name)/2:]</div><div class="line">    hex_name = hex_name.decode(&apos;hex&apos;)</div><div class="line">    uid = base64.b64encode(hex_name)</div><div class="line">    uid = urllib.quote(uid)</div><div class="line">    for ck in cookie:</div><div class="line">        if ck.name==&apos;uid&apos;:</div><div class="line">            ck.value=uid</div><div class="line">    text=opener.open(index_url).read()</div><div class="line">    if &apos;Flag&apos; in text:</div><div class="line">        print text</div><div class="line">        break</div><div class="line">    else:</div><div class="line">       print num</div></pre></td></tr></table></figure></p>
+<p>我们这里是16个字节为一个组，所以我们用了16个<code>a</code>做前缀，后面只需要把加密结果取出来，分成两组，第二组就是我们附加的<code>num</code>的值，<br>然后再把<code>uid</code>修改为这个值，便可以得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">Hi you are administrotor!!&lt;br/&gt;Flag is ****</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">密码学</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/08/密码学/ecb/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-密码学/MD5扩展攻击" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -302,19 +384,19 @@
 
 
   
-    <article id="post-python/多进程爆破cet4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python/md5截断字符串爆破" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/python/多进程爆破cet4/">多线程爆破cet4准考号</a>
+      <a class="article-title" href="/2017/11/02/python/md5截断字符串爆破/">md5截断字符串比较爆破</a>
     </h1>
   
 
         
-        <a href="/2017/11/02/python/多进程爆破cet4/" class="archive-article-date">
+        <a href="/2017/11/02/python/md5截断字符串爆破/" class="archive-article-date">
   	<time datetime="2017-11-02T02:57:53.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
 </a>
         
@@ -322,20 +404,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line">import requests</div><div class="line">from multiprocessing import Pool</div><div class="line">tit=&apos;听&apos;.decode(&apos;utf-8&apos;)</div><div class="line">def ck(url):</div><div class="line">    url1=&apos;http://www.chsi.com.cn/cet/query?zkzh=5100601711&apos;+str(url)+&apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re1 = requests.get(url1)</div><div class="line">    try:</div><div class="line">        if tit in re1.text:</div><div class="line">            print &apos;find:5100601711&apos;+str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100601711&apos;+str(url)+&apos;失败&apos;</div><div class="line">    except ZeroDivisionError, e:</div><div class="line">        print e.message</div><div class="line">    url2 = &apos;http://www.chsi.com.cn/cet/query?zkzh=5100611711&apos; + str(url) + &apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re2 = requests.get(url2)</div><div class="line">    try:</div><div class="line">        if tit in re2.text:</div><div class="line">            print &apos;find:5100611711&apos; + str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100611711&apos; + str(url) + &apos;失败&apos;</div><div class="line">    except ConnectionError, e:</div><div class="line">        print e.message</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    pool=Pool(100)</div><div class="line">    f = open(&apos;G:\/1234.txt&apos;)</div><div class="line">    list = []</div><div class="line">    for line in f.readlines():</div><div class="line">        line = line.strip(&apos;\n&apos;)</div><div class="line">        list.append(line)</div><div class="line">    pool.map(ck,list)</div><div class="line">    pool.close()</div><div class="line">    pool.join()</div><div class="line"># u=&apos;http://www.chsi.com.cn/cet/query&apos;</div><div class="line"># tit=&apos;听力&apos;.decode(&apos;utf-8&apos;)</div><div class="line"># for a in range(0,10):</div><div class="line">#     for b in range(0, 10):</div><div class="line">#         for c in range(0, 10):</div><div class="line">#             for d in range(0, 10):</div><div class="line">#                 for e in range(0, 10):</div><div class="line">#                     get=&apos;?zkzh=5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;&amp;xm=左松林&apos;</div><div class="line">#                     url=u+get</div><div class="line">#                     re=requests.get(url)</div><div class="line">#                     try:</div><div class="line">#                         if tit in re.text:</div><div class="line">#                             print &apos;find:5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)</div><div class="line">#                         else:</div><div class="line">#                             print &apos;5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;失败&apos;</div><div class="line">#                     except ZeroDivisionError, e:</div><div class="line">#                         print e.message</div></pre></td></tr></table></figure>
-<p>from multiprocessing import Pool<br>进程池<br>multiprocessing模块<br>看一下Process类的构造方法：<br><code>__init__(self, group=None, target=None, name=None, args=(), kwargs={})</code><br>参数说明：<br>group：进程所属组。基本不用<br>target：表示调用对象。<br>args：表示调用对象的位置参数元组。<br>name：别名<br>kwargs：表示调用对象的字典。<br>创建进程的简单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">import multiprocessing</div><div class="line"></div><div class="line">def do(n) :</div><div class="line">  #获取当前线程的名字</div><div class="line">  name = multiprocessing.current_process().name</div><div class="line">  print name,&apos;starting&apos;</div><div class="line">  print &quot;worker &quot;, n</div><div class="line">  return</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos; :</div><div class="line">  numList = []</div><div class="line">  for i in xrange(5) :</div><div class="line">    p = multiprocessing.Process(target=do, args=(i,))</div><div class="line">    numList.append(p)</div><div class="line">    p.start()</div><div class="line">    p.join()</div><div class="line">    print &quot;Process end.&quot;</div></pre></td></tr></table></figure></p>
-<p>执行结果：<br>Process-1 starting<br>worker  0<br>Process end.<br>Process-2 starting<br>worker  1<br>Process end.<br>Process-3 starting<br>worker  2<br>Process end.<br>Process-4 starting<br>worker  3<br>Process end.<br>Process-5 starting<br>worker  4<br>Process end.<br>创建子进程时，只需要传入一个执行函数和函数的参数，创建一个Process实例，并用其start()方法启动，这样创建进程比fork()还要简单。<br>join()方法表示等待子进程结束以后再继续往下运行，通常用于进程间的同步。<br>注意：<br>在Windows上要想使用进程模块，就必须把有关进程的代码写在当前.py文件的<code>if __name__ == ‘__main__’</code> :语句的下面，才能正常使用<code>Windows</code>下的进程模块。<code>Unix/Linux</code>下则不需要。  </p>
-<h3 id="Pool类"><a href="#Pool类" class="headerlink" title="Pool类"></a>Pool类</h3><p>在使用Python进行系统管理时，特别是同时操作多个文件目录或者远程控制多台主机，并行操作可以节约大量的时间。如果操作的对象数目不大时，还可以直接使用Process类动态的生成多个进程，十几个还好，但是如果上百个甚至更多，那手动去限制进程数量就显得特别的繁琐，此时进程池就派上用场了。<br>Pool类可以提供指定数量的进程供用户调用，当有新的请求提交到Pool中时，如果池还没有满，就会创建一个新的进程来执行请求。如果池满，请求就会告知先等待，直到池中有进程结束，才会创建新的进程来执行这些请求<br>下面介绍一下<code>multiprocessing</code>   模块下的Pool类下的几个方法  </p>
-<h4 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h4><p>函数原型：<br><code>apply(func[, args=()[, kwds={}]])</code><br>该函数用于传递不定参数，主进程会被阻塞直到函数执行结束（不建议使用，并且3.x以后不在出现）。</p>
-<h4 id="apply-async"><a href="#apply-async" class="headerlink" title="apply_async()"></a>apply_async()</h4><p>函数原型：</p>
-<p><code>apply_async(func[, args=()[, kwds={}[, callback=None]]])</code></p>
-<p>与apply用法一样，但它是非阻塞且支持结果返回进行回调。</p>
-<h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><p>函数原型：</p>
-<p><code>map(func, iterable[, chunksize=None])</code></p>
-<p>Pool类中的map方法，与内置的map函数用法行为基本一致，它会使进程阻塞直到返回结果。<br>注意，虽然第二个参数是一个迭代器，但在实际使用中，必须在整个队列都就绪后，程序才会运行子进程。</p>
-<h4 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h4><p>关闭进程池（pool），使其不在接受新的任务。</p>
-<h4 id="terminate"><a href="#terminate" class="headerlink" title="terminate()"></a>terminate()</h4><p>结束工作进程，不再处理未处理的任务。</p>
-<h4 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h4><p>主进程阻塞等待子进程的退出，join方法必须在close或terminate之后使用。<br>multiprocessing.Pool类的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">from multiprocessing import Pool</div><div class="line">def run(fn):</div><div class="line">  #fn: 函数参数是数据列表的一个元素</div><div class="line">  time.sleep(1)</div><div class="line">  return fn*fn</div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">  testFL = [1,2,3,4,5,6]  </div><div class="line">  print &apos;shunxu:&apos; #顺序执行(也就是串行执行，单进程)</div><div class="line">  s = time.time()</div><div class="line">  for fn in testFL:</div><div class="line">    run(fn)</div><div class="line"></div><div class="line">  e1 = time.time()</div><div class="line">  print &quot;顺序执行时间：&quot;, int(e1 - s)</div><div class="line"></div><div class="line">  print &apos;concurrent:&apos; #创建多个进程，并行执行</div><div class="line">  pool = Pool(5)  #创建拥有5个进程数量的进程池</div><div class="line">  #testFL:要处理的数据列表，run：处理testFL列表中数据的函数</div><div class="line">  rl =pool.map(run, testFL)</div><div class="line">  pool.close()#关闭进程池，不再接受新的进程</div><div class="line">  pool.join()#主进程阻塞等待子进程的退出</div><div class="line">  e2 = time.time()</div><div class="line">  print &quot;并行执行时间：&quot;, int(e2-e1)</div><div class="line">  print rl</div></pre></td></tr></table></figure></p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import hashlib</div><div class="line">import re</div><div class="line">a = 1</div><div class="line">while a &lt; 999999:</div><div class="line">    md5 = hashlib.md5((str(a) + &apos;D0g3&apos;).encode()).hexdigest()</div><div class="line">    if re.match(&apos;^0e\d&#123;8&#125;&apos;, md5[2:]):</div><div class="line">        print(str(a) + &quot; &quot; + md5 + &quot;\n&quot;)</div><div class="line">        a += 1</div><div class="line">        continue</div><div class="line">    a += 1</div></pre></td></tr></table></figure>
+<p>md5爆破<br>弱类型</p>
 
       
 
@@ -359,7 +429,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/python/多进程爆破cet4/">show all >></a>
+          <a class="article-more-a" href="/2017/11/02/python/md5截断字符串爆破/">show all >></a>
         </p>
       
 
@@ -463,19 +533,19 @@
 
 
   
-    <article id="post-python/md5截断字符串爆破" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python/多进程爆破cet4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/python/md5截断字符串爆破/">md5截断字符串比较爆破</a>
+      <a class="article-title" href="/2017/11/02/python/多进程爆破cet4/">多线程爆破cet4准考号</a>
     </h1>
   
 
         
-        <a href="/2017/11/02/python/md5截断字符串爆破/" class="archive-article-date">
+        <a href="/2017/11/02/python/多进程爆破cet4/" class="archive-article-date">
   	<time datetime="2017-11-02T02:57:53.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
 </a>
         
@@ -483,8 +553,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import hashlib</div><div class="line">import re</div><div class="line">a = 1</div><div class="line">while a &lt; 999999:</div><div class="line">    md5 = hashlib.md5((str(a) + &apos;D0g3&apos;).encode()).hexdigest()</div><div class="line">    if re.match(&apos;^0e\d&#123;8&#125;&apos;, md5[2:]):</div><div class="line">        print(str(a) + &quot; &quot; + md5 + &quot;\n&quot;)</div><div class="line">        a += 1</div><div class="line">        continue</div><div class="line">    a += 1</div></pre></td></tr></table></figure>
-<p>md5爆破<br>弱类型</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line">import requests</div><div class="line">from multiprocessing import Pool</div><div class="line">tit=&apos;听&apos;.decode(&apos;utf-8&apos;)</div><div class="line">def ck(url):</div><div class="line">    url1=&apos;http://www.chsi.com.cn/cet/query?zkzh=5100601711&apos;+str(url)+&apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re1 = requests.get(url1)</div><div class="line">    try:</div><div class="line">        if tit in re1.text:</div><div class="line">            print &apos;find:5100601711&apos;+str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100601711&apos;+str(url)+&apos;失败&apos;</div><div class="line">    except ZeroDivisionError, e:</div><div class="line">        print e.message</div><div class="line">    url2 = &apos;http://www.chsi.com.cn/cet/query?zkzh=5100611711&apos; + str(url) + &apos;&amp;xm=左松林&amp;yzm=11&apos;</div><div class="line">    re2 = requests.get(url2)</div><div class="line">    try:</div><div class="line">        if tit in re2.text:</div><div class="line">            print &apos;find:5100611711&apos; + str(url)</div><div class="line">        else:</div><div class="line">            print &apos;5100611711&apos; + str(url) + &apos;失败&apos;</div><div class="line">    except ConnectionError, e:</div><div class="line">        print e.message</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    pool=Pool(100)</div><div class="line">    f = open(&apos;G:\/1234.txt&apos;)</div><div class="line">    list = []</div><div class="line">    for line in f.readlines():</div><div class="line">        line = line.strip(&apos;\n&apos;)</div><div class="line">        list.append(line)</div><div class="line">    pool.map(ck,list)</div><div class="line">    pool.close()</div><div class="line">    pool.join()</div><div class="line"># u=&apos;http://www.chsi.com.cn/cet/query&apos;</div><div class="line"># tit=&apos;听力&apos;.decode(&apos;utf-8&apos;)</div><div class="line"># for a in range(0,10):</div><div class="line">#     for b in range(0, 10):</div><div class="line">#         for c in range(0, 10):</div><div class="line">#             for d in range(0, 10):</div><div class="line">#                 for e in range(0, 10):</div><div class="line">#                     get=&apos;?zkzh=5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;&amp;xm=左松林&apos;</div><div class="line">#                     url=u+get</div><div class="line">#                     re=requests.get(url)</div><div class="line">#                     try:</div><div class="line">#                         if tit in re.text:</div><div class="line">#                             print &apos;find:5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)</div><div class="line">#                         else:</div><div class="line">#                             print &apos;5100601711&apos;+str(a)+str(b)+str(c)+str(d)+str(e)+&apos;失败&apos;</div><div class="line">#                     except ZeroDivisionError, e:</div><div class="line">#                         print e.message</div></pre></td></tr></table></figure>
+<p>from multiprocessing import Pool<br>进程池<br>multiprocessing模块<br>看一下Process类的构造方法：<br><code>__init__(self, group=None, target=None, name=None, args=(), kwargs={})</code><br>参数说明：<br>group：进程所属组。基本不用<br>target：表示调用对象。<br>args：表示调用对象的位置参数元组。<br>name：别名<br>kwargs：表示调用对象的字典。<br>创建进程的简单实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">import multiprocessing</div><div class="line"></div><div class="line">def do(n) :</div><div class="line">  #获取当前线程的名字</div><div class="line">  name = multiprocessing.current_process().name</div><div class="line">  print name,&apos;starting&apos;</div><div class="line">  print &quot;worker &quot;, n</div><div class="line">  return</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos; :</div><div class="line">  numList = []</div><div class="line">  for i in xrange(5) :</div><div class="line">    p = multiprocessing.Process(target=do, args=(i,))</div><div class="line">    numList.append(p)</div><div class="line">    p.start()</div><div class="line">    p.join()</div><div class="line">    print &quot;Process end.&quot;</div></pre></td></tr></table></figure></p>
+<p>执行结果：<br>Process-1 starting<br>worker  0<br>Process end.<br>Process-2 starting<br>worker  1<br>Process end.<br>Process-3 starting<br>worker  2<br>Process end.<br>Process-4 starting<br>worker  3<br>Process end.<br>Process-5 starting<br>worker  4<br>Process end.<br>创建子进程时，只需要传入一个执行函数和函数的参数，创建一个Process实例，并用其start()方法启动，这样创建进程比fork()还要简单。<br>join()方法表示等待子进程结束以后再继续往下运行，通常用于进程间的同步。<br>注意：<br>在Windows上要想使用进程模块，就必须把有关进程的代码写在当前.py文件的<code>if __name__ == ‘__main__’</code> :语句的下面，才能正常使用<code>Windows</code>下的进程模块。<code>Unix/Linux</code>下则不需要。  </p>
+<h3 id="Pool类"><a href="#Pool类" class="headerlink" title="Pool类"></a>Pool类</h3><p>在使用Python进行系统管理时，特别是同时操作多个文件目录或者远程控制多台主机，并行操作可以节约大量的时间。如果操作的对象数目不大时，还可以直接使用Process类动态的生成多个进程，十几个还好，但是如果上百个甚至更多，那手动去限制进程数量就显得特别的繁琐，此时进程池就派上用场了。<br>Pool类可以提供指定数量的进程供用户调用，当有新的请求提交到Pool中时，如果池还没有满，就会创建一个新的进程来执行请求。如果池满，请求就会告知先等待，直到池中有进程结束，才会创建新的进程来执行这些请求<br>下面介绍一下<code>multiprocessing</code>   模块下的Pool类下的几个方法  </p>
+<h4 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h4><p>函数原型：<br><code>apply(func[, args=()[, kwds={}]])</code><br>该函数用于传递不定参数，主进程会被阻塞直到函数执行结束（不建议使用，并且3.x以后不在出现）。</p>
+<h4 id="apply-async"><a href="#apply-async" class="headerlink" title="apply_async()"></a>apply_async()</h4><p>函数原型：</p>
+<p><code>apply_async(func[, args=()[, kwds={}[, callback=None]]])</code></p>
+<p>与apply用法一样，但它是非阻塞且支持结果返回进行回调。</p>
+<h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><p>函数原型：</p>
+<p><code>map(func, iterable[, chunksize=None])</code></p>
+<p>Pool类中的map方法，与内置的map函数用法行为基本一致，它会使进程阻塞直到返回结果。<br>注意，虽然第二个参数是一个迭代器，但在实际使用中，必须在整个队列都就绪后，程序才会运行子进程。</p>
+<h4 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h4><p>关闭进程池（pool），使其不在接受新的任务。</p>
+<h4 id="terminate"><a href="#terminate" class="headerlink" title="terminate()"></a>terminate()</h4><p>结束工作进程，不再处理未处理的任务。</p>
+<h4 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h4><p>主进程阻塞等待子进程的退出，join方法必须在close或terminate之后使用。<br>multiprocessing.Pool类的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">from multiprocessing import Pool</div><div class="line">def run(fn):</div><div class="line">  #fn: 函数参数是数据列表的一个元素</div><div class="line">  time.sleep(1)</div><div class="line">  return fn*fn</div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">  testFL = [1,2,3,4,5,6]  </div><div class="line">  print &apos;shunxu:&apos; #顺序执行(也就是串行执行，单进程)</div><div class="line">  s = time.time()</div><div class="line">  for fn in testFL:</div><div class="line">    run(fn)</div><div class="line"></div><div class="line">  e1 = time.time()</div><div class="line">  print &quot;顺序执行时间：&quot;, int(e1 - s)</div><div class="line"></div><div class="line">  print &apos;concurrent:&apos; #创建多个进程，并行执行</div><div class="line">  pool = Pool(5)  #创建拥有5个进程数量的进程池</div><div class="line">  #testFL:要处理的数据列表，run：处理testFL列表中数据的函数</div><div class="line">  rl =pool.map(run, testFL)</div><div class="line">  pool.close()#关闭进程池，不再接受新的进程</div><div class="line">  pool.join()#主进程阻塞等待子进程的退出</div><div class="line">  e2 = time.time()</div><div class="line">  print &quot;并行执行时间：&quot;, int(e2-e1)</div><div class="line">  print rl</div></pre></td></tr></table></figure></p>
 
       
 
@@ -508,7 +590,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/python/md5截断字符串爆破/">show all >></a>
+          <a class="article-more-a" href="/2017/11/02/python/多进程爆破cet4/">show all >></a>
         </p>
       
 
@@ -873,101 +955,6 @@
 
 
   
-    <article id="post-php支持的协议/file协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/php支持的协议/file协议/">file协议</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/02/php支持的协议/file协议/" class="archive-article-date">
-  	<time datetime="2017-11-02T02:57:11.079Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!--markdown-->
-<h3 id="php-支持的协议"><a href="#php-支持的协议" class="headerlink" title="php 支持的协议"></a>php 支持的协议</h3><h4 id="php手册"><a href="#php手册" class="headerlink" title="php手册"></a>php手册</h4><p><a href="http://cn2.php.net/manual/zh/wrappers.file.php" target="_blank" rel="external">http://cn2.php.net/manual/zh/wrappers.file.php</a>  </p>
-<h4 id="file"><a href="#file" class="headerlink" title="file://"></a>file://</h4><p>file:// — 访问本地文件系统  </p>
-<h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><p>文件系统是PHP使用的默认封装协议，展现了本地文件系统。 当指定了一个相对路径（不以<figure class="highlight plain"><figcaption><span>Windows盘符开头的路径）提供的路径将基于当前的工作目录。  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">在很多情况下是脚本所在的目录，除非被修改了。 使用 CLI的时候，目录默认是脚本被调用时所在的目录。  </div><div class="line">在某些函数里，例如</div></pre></td></tr></table></figure></p>
-<p>fopen ()和 file_get_contents()， include_path<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">会可选地搜索，也作为相对的路径。  </div><div class="line">##### 用法</div></pre></td></tr></table></figure></p>
-<p>/path/to/file.ext<br>relative/path/to/file.ext<br>fileInCwd.ext<br>C:/path/to/winfile.ext<br>C:\path\to\winfile.ext<br>\smbserver\share\path\to\winfile.ext<br>file:///path/to/file.ext<br>```</p>
-<h5 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h5><p>封装协议概要<br>|属性                   | 支持|<br>|:———————:|:—:|<br>|受 allow_url_fopen 影响|  No |<br>|允许读取               |Yes<br>|允许写入               |Yes<br>|允许添加               |Yes<br>|允许同时读和写         |Yes<br>|支持 stat()            |Yes<br>|支持 unlink()          |Yes<br>|支持 rename()          |Yes<br>|支持 mkdir()           |Yes<br>|支持 rmdir()           |Yes</p>
-<p>#####更新日志</p>
-<table>
-<thead>
-<tr>
-<th>版本</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5.0.0</td>
-<td>添加了 file://.</td>
-</tr>
-</tbody>
-</table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php支持的协议</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/php支持的协议/file协议/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1069,14 +1056,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XSS</a>
               </li>
              
@@ -1085,7 +1064,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1093,11 +1072,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
+                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1106,6 +1089,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
               </li>
             
             <div class="clearfix"></div>

