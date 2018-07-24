@@ -632,7 +632,7 @@ DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm /ty
 </code></pre><p>16.过滤了空格，script，/，可以用on事件<br>用%0a等代替空格，和sql注入一样<br><img%0dsrc=1%0donerror=alert(1)><br>17.<a href="http://127.0.0.1/xss/level17.php?arg01=a&amp;arg02=b" target="_blank" rel="external">http://127.0.0.1/xss/level17.php?arg01=a&amp;arg02=b</a><br>查找输出点</img%0dsrc=1%0donerror=alert(1)></p>
 <pre><code>&lt;embed src=xsf01.swf?a=b onmouseover=alert(1) width=100% heigth=100%&gt;&lt;h2 align=center&gt;
 </code></pre><p>这个输出点就是这个a=b，排除过滤之后可以这样构造，用on事件<br>18.哇，这个题和17题有什么不同？<br>19和20是flashxss，还没有研究过，做不下去了。  </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这题蛮有意思的，对xss入门很友好，然后以后就需要看看javascript的弹cookie那些脚本了，感觉xss不弹cookie还是废物一个。<br>写下这篇文章，也借鉴学习也多方的文章。<br><a href="http://139.129.31.35/index.php/archives/494/" target="_blank" rel="external">http://139.129.31.35/index.php/archives/494/</a><br>我大哥的文章，记录得很齐全，后面应该会用到的。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这题蛮有意思的，对xss入门很友好，然后以后就需要看看javascript的弹cookie那些脚本了，感觉xss不弹cookie还是废物一个。<br>写下这篇文章，也借鉴学习也多方的文章。  </p>
 
       
 
@@ -1552,15 +1552,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SQLi</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ssrf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">XXE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1569,10 +1573,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
               </li>
              
               <li class="article-tag-list-item">
